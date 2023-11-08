@@ -25,7 +25,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "prebuild": "src/tweaks.py",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
