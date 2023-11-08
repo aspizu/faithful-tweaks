@@ -39,7 +39,7 @@ import { Tweak } from "./Tweak"
 import type { TweakMeta } from "./Tweak"
 import { CustomOptionBackground } from "./CustomOptionBackground"
 
-const PACK = ["/public/pack/pack.png", "/public/pack/LICENSE.txt"]
+const PACK = ["pack.png", "LICENSE.txt"]
 
 export type Variant = "x32" | "x64"
 
@@ -128,7 +128,9 @@ export function Main() {
                                 build(
                                     data,
                                     variant,
-                                    Object.keys(selected),
+                                    Object.entries(selected)
+                                        .filter(([_, isSelected]) => isSelected)
+                                        .map(([name, _]) => name),
                                     selectedCustomOptionBackground,
                                 )
                             }>
@@ -294,7 +296,7 @@ async function build(
         }
     }
     for (const file of PACK) {
-        zip.file(file, await (await fetch(file)).blob())
+        zip.file(file, await (await fetch(`/pack/${file}`)).blob())
     }
     const meta = {
         pack: {

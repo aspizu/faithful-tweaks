@@ -46,9 +46,12 @@ for tweak in Path("public/tweaks/").iterdir():
     )
     files = []
     index[tweak.name] = files
-    for file in tweak.glob("x32/assets/**/*"):
+    variant = "x64"
+    if (tweak / "x32").is_dir():
+        variant = "x32"
+    for file in tweak.glob(f"{variant}/assets/**/*"):
         if not file.is_file():
             continue
-        files.append(file.relative_to(tweak / "x32" / "assets").as_posix())
+        files.append(file.relative_to(tweak / variant / "assets").as_posix())
 
 json.dump(index, open("public/tweaks/index.json", "w"))

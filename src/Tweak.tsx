@@ -46,7 +46,7 @@ interface TweakProps {
 }
 
 export function Tweak(props: TweakProps) {
-    const isSupported = props.meta.variants.indexOf(props.variant) == 0
+    const isSupported = props.meta.variants.indexOf(props.variant) != -1
     const preview = `/tweaks/${props.name}/${
         isSupported ? props.variant : props.meta.variants[0]
     }/preview.png`

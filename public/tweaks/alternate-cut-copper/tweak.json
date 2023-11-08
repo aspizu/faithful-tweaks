@@ -1,0 +1,15 @@
+{
+  "title": "Alternate Cut Copper",
+  "description": "Vertically divided cut copper textures.",
+  "author": {
+    "name": "jan Apisu",
+    "email": "aspizu@protonmail.com",
+    "homepage": "https://github.com/aspizu"
+  },
+  "category": "aesthetic",
+  "variants": [
+    "x32",
+    "x64"
+  ],
+  "version": "1.20.2"
+}

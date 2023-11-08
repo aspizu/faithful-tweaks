@@ -33,7 +33,7 @@
  - [ ] Accurate Spyglass
  - [ ] Smoother Warped Planks
  - [ ] Consistent Bamboo Planks
- - [ ] Alternate Cut Copper
+ - [x] Alternate Cut Copper
  - [x] Polished Stones to Bricks
  - [ ] Singular Glazed Terracotta
  - [ ] Horizontal World Border
