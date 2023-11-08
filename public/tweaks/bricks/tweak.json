@@ -1,0 +1,14 @@
+{
+  "title": "Polished to Bricks",
+  "description": "Replaces polished andesite, diorite and granite with brick variants.",
+  "author": {
+    "name": "jan Apisu",
+    "email": "aspizu@protonmail.com",
+    "homepage": "https://github.com/aspizu"
+  },
+  "variants": [
+    "x64"
+  ],
+  "category": "aesthetic",
+  "version": "1.20.2"
+}
