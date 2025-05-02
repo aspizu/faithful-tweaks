@@ -59,3 +59,19 @@
 .overlapping-grid-layer {
     grid-area: 1 / 1;
 }
+
+.rendering-pixelated {
+    image-rendering: pixelated;
+}
+
+::-webkit-scrollbar {
+    @apply h-2 w-2;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full border-[1px] border-solid border-transparent bg-clip-padding;
+}

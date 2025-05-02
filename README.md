@@ -1,0 +1,692 @@
+# All Tweaks
+
+ - [_] Alternate Block Destruction
+ - [_] Black Nether Bricks
+ - [_] Cherry Picking
+ - [_] Unbundled Hay Bales
+ - [_] Unbundled Dried Kelp
+ - [_] Solid Honey
+ - [_] Solid Slime
+ - [_] Desaturated Resin
+ - [_] Desaturated Purpur
+ - [_] Desaturated Dark Oak
+ - [_] Horizontal Nuggets
+ - [_] Vertical Nuggets
+ - [_] Softer Wool
+ - [_] Brown Leather
+ - [_] Red Iron Golem Flowers
+ - [_] Rename 'Stem' to 'Log'
+ - [_] Colorful Enchanting Table Particles
+ - [_] HD Shield Banner Patterns
+ - [_] Warm Glow
+ - [_] 1.21.2 Redstone Torch
+ - [_] Endless End Rods
+ - [_] Pink End Rods
+ - [_] Animated Campfire Items
+ - [_] Ashless Campfires
+ - [_] Glass Doors & Trapdoors
+ - [_] Flint Tipped Arrows
+ - [_] Splash Bottle o' Enchanting
+ - [_] 2D Spyglass
+ - [_] Accurate Spyglass
+ - [_] Accurate Scaffolding
+ - [_] Fencier Fences
+ - [_] Moss Carpet Overhang
+ - [_] Smoother Warped Planks
+ - [_] Consistent Bamboo Planks
+ - [_] Alternate Cut Copper
+ - [_] Polished Stones to Bricks
+ - [_] Singular Glazed Terracotta
+ - [_] Horizontal World Border
+ - [_] Plain Leather Armor
+ - [_] Golden Crown
+ - [_] Classic Style Netherite Armor
+ - [_] Allay Elytra
+ - [_] Phantom Elytra
+ - [_] Vex Elytra
+ - [_] Dragon Elytra
+ - [_] Steve Zombies
+ - [_] Alex Zombies
+ - [_] Ari Zombies
+ - [_] Efe Zombies
+ - [_] Kai Zombies
+ - [_] Makena Zombies
+ - [_] Noor Zombies
+ - [_] Sunny Zombies
+ - [_] Zuri Zombies
+ - [_] Bushy Leaves
+ - [_] Wavy Leaves
+ - [_] Wavy Plants
+ - [_] Wavy Water
+ - [_] Darker Dark Oak Leaves
+ - [_] Golden Savanna
+ - [_] Lush Grass (Mostly) All 'Round!
+ - [_] Alternate Bedrock
+ - [_] Circular Sun and Moon
+ - [_] Twinkling Stars
+ - [_] Circular Log Tops
+ - [_] Smoother Oak Log
+ - [_] Smoother Stones
+ - [_] Pebbleless Dirt
+ - [_] Pebbleless Coarse Dirt
+ - [_] Brighter Nether
+ - [_] Clearer Water
+ - [_] Uniform Ores
+ - [_] Fancy Sunflowers
+ - [_] Taller Sunflowers
+ - [_] Shorter Short Grass
+ - [_] Shorter Tall Grass
+ - [_] Whiter Snow
+ - [_] Lower Grass
+ - [_] Grass Sides
+ - [_] Lower Mycelium
+ - [_] Mycelium Sides
+ - [_] Lower Grass Paths
+ - [_] Grass Path Sides
+ - [_] Lower Podzol
+ - [_] Podzol Sides
+ - [_] Lower Snow
+ - [_] Snow Sides
+ - [_] Lower Crimson Nylium
+ - [_] Crimson Nylium Sides
+ - [_] Lower Warped Nylium
+ - [_] Warped Nylium Sides
+ - [_] Variated Dirt
+ - [_] Variated Coarse Dirt
+ - [_] Variated Grass
+ - [_] Variated Cobblestone
+ - [_] Variated Moss
+ - [_] Variated Bricks
+ - [_] Variated Birch Logs
+ - [_] Variated Red Mushroom Blocks
+ - [_] Variated Nylium
+ - [_] Variated End Stone
+ - [_] Variated Gravel
+ - [_] Variated Mycelium
+ - [_] Variated Planks
+ - [_] Variated Stone
+ - [_] Variated Terracotta
+ - [_] Variated Unpolished Stones
+ - [_] Variated Bookshelves
+ - [_] Randomly Rotated Sunflowers
+ - [_] Variated Villagers
+ - [_] Connected Bookshelves
+ - [_] Connected Polished Stones
+ - [_] Connected Iron Blocks
+ - [_] Connected Lapis Blocks
+ - [_] Quieter Rain
+ - [_] Quieter Thunder
+ - [_] Quieter Explosions
+ - [_] Quieter Dispensers and Droppers
+ - [_] Quieter Minecarts
+ - [_] Quieter Fire
+ - [_] Quieter Nether Portals
+ - [_] Quieter Water
+ - [_] Quieter Consumables
+ - [_] Quieter Sculk Sensors
+ - [_] Quieter Sculk Shriekers
+ - [_] Quieter Pistons
+ - [_] No Cave Sounds
+ - [_] Quieter Allays
+ - [_] Quieter Armadillos
+ - [_] Quieter Axolotls
+ - [_] Quieter Bats
+ - [_] Quieter Bees
+ - [_] Quieter Blazes
+ - [_] Quieter Breezes
+ - [_] Quieter Camels
+ - [_] Quieter Cats
+ - [_] Quieter Chickens
+ - [_] Quieter Cows
+ - [_] Quieter Creakings
+ - [_] Quieter Creepers
+ - [_] Quieter Dolphins
+ - [_] Quieter Ender Dragon
+ - [_] Quieter Endermen
+ - [_] Quieter Fish
+ - [_] Quieter Foxes
+ - [_] Quieter Frogs
+ - [_] Quieter Ghasts
+ - [_] Quieter Goats
+ - [_] Quieter Guardians
+ - [_] Quieter Hoglins
+ - [_] Quieter Horses
+ - [_] Quieter Illagers
+ - [_] Quieter Iron Golems
+ - [_] Quieter Llamas
+ - [_] Quieter Pandas
+ - [_] Quieter Parrots
+ - [_] Quieter Phantoms
+ - [_] Quieter Pigs
+ - [_] Quieter Piglins
+ - [_] Quieter Polar Bears
+ - [_] Quieter Rabbits
+ - [_] Quieter Ravagers
+ - [_] Quieter Sheep
+ - [_] Quieter Shulkers
+ - [_] Quieter Silverfish
+ - [_] Quieter Skeletons
+ - [_] Quieter Slimes
+ - [_] Quieter Sniffers
+ - [_] Quieter Snow Golems
+ - [_] Quieter Spiders
+ - [_] Quieter Squids
+ - [_] Quieter Striders
+ - [_] Quieter Tadpoles
+ - [_] Quieter Turtles
+ - [_] Quieter Vexes
+ - [_] Quieter Villagers
+ - [_] Quieter Wardens
+ - [_] Quieter Witches
+ - [_] Quieter Wither
+ - [_] Quieter Wolves
+ - [_] Quieter Zombies
+ - [_] No Ender Dragon Death Sound
+ - [_] No Wither Spawn Sound
+ - [_] Diminishing Tools
+ - [_] Unique Spawn Eggs
+ - [_] Unique Painting Items
+ - [_] Unique Axolotl Buckets
+ - [_] Mob Spawn Indicator
+ - [_] Ore Borders
+ - [_] Suspicious Sand & Gravel Borders
+ - [_] Budding Amethyst Borders
+ - [_] Visual Infested Stone (Items)
+ - [_] Visual Waxed Copper (Items)
+ - [_] Fullbright
+ - [_] Fully Aged Crop Marker
+ - [_] Fully Aged Amethyst Cluster Marker
+ - [_] Different Stems
+ - [_] Age 25 Kelp
+ - [_] Mine Progress Bar
+ - [_] Clear Banner Patterns
+ - [_] Hunger Preview
+ - [_] Music Disc Redstone Level Preview
+ - [_] Sticky Piston Sides
+ - [_] Directional Hoppers
+ - [_] Directional Dispensers & Droppers
+ - [_] Directional Observers
+ - [_] Clean Redstone Dust
+ - [_] Redstone Power Levels
+ - [_] Unlit Redstone Ore
+ - [_] Groovy Levers
+ - [_] Visible Tripwires
+ - [_] Compass Lodestone
+ - [_] Brewing Guide
+ - [_] Visual Honey Stages
+ - [_] Visual Cauldron Stages
+ - [_] Visual Composter Stages
+ - [_] Visual Sapling Growth
+ - [_] Visual Note Block Pitch
+ - [_] Arabic Numerals
+ - [_] Unobtrusive Rain
+ - [_] Unobtrusive Snow
+ - [_] Unobtrusive Particles
+ - [_] No Falling Leaf Particles
+ - [_] Borderless Glass
+ - [_] Borderless Stained Glass
+ - [_] Borderless Tinted Glass
+ - [_] Clean Glass
+ - [_] Clean Stained Glass
+ - [_] Clean Tinted Glass
+ - [_] Unobtrusive Scaffolding
+ - [_] Unobtrusive Enchantment Glint
+ - [_] Lower Fire
+ - [_] Lower Shield
+ - [_] No Fog
+ - [_] Translucent Pumpkin Overlay
+ - [_] No Pumpkin Overlay
+ - [_] Translucent Spyglass Overlay
+ - [_] No Spyglass Overlay
+ - [_] No Vignette
+ - [_] No Beacon Beam
+ - [_] Cleaner World Border
+ - [_] Invisible Totem
+ - [_] Smaller Utilities
+ - [_] Short Swords
+ - [_] 3D Bookshelves
+ - [_] 3D Chiseled Bookshelves
+ - [_] 3D Chains
+ - [_] 3D Pointed Dripstone
+ - [_] 3D Amethyst Crystals
+ - [_] 3D Redstone Wire
+ - [_] 3D Items
+ - [_] 3D Mace
+ - [_] 3D Ladders
+ - [_] 3D Rails
+ - [_] 3D Sugar Cane
+ - [_] 3D Iron Bars
+ - [_] 3D Lily Pads
+ - [_] 3D Doors & Trapdoors
+ - [_] 3D Fungi
+ - [_] 3D Vines
+ - [_] 3D Glow Lichen
+ - [_] 3D Sculk Veins
+ - [_] 3D Stonecutters
+ - [_] 3D Sun & Moon
+ - [_] Dark UI
+ - [_] Transparent UI
+ - [_] Numbered Hotbar
+ - [_] Smoother Font
+ - [_] Hotbar-Style Inventory Slot Highlight
+ - [_] No Java Edition Subtitle
+ - [_] Clearer Wither Hearts
+ - [_] Colored Ping Indicator
+ - [_] Rainbow Experience Bar
+ - [_] Literal Gamerule Names
+ - [_] No Crosshair
+ - [_] Smaller Crosshair
+ - [_] Dot Crosshair
+ - [_] Plus Dot Crosshair
+ - [_] Circle Crosshair
+ - [_] Circle Dot Crosshair
+ - [_] Square Crosshair
+ - [_] Square Dot Crosshair
+ - [_] Square Plus Crosshair
+ - [_] Square Plus Dot Crosshair
+ - [_] 4 Angled Crosshair
+ - [_] 4 Angled Dot Crosshair
+ - [_] Heart Crosshair
+ - [_] Arrow Crosshair
+ - [_] White Hearts
+ - [_] Light Gray Hearts
+ - [_] Gray Hearts
+ - [_] Black Hearts
+ - [_] Brown Hearts
+ - [_] Orange Hearts
+ - [_] Yellow Hearts
+ - [_] Lime Hearts
+ - [_] Green Hearts
+ - [_] Cyan Hearts
+ - [_] Light Blue Hearts
+ - [_] Blue Hearts
+ - [_] Purple Hearts
+ - [_] Magenta Hearts
+ - [_] Pink Hearts
+ - [_] Pride
+ - [_] Progress
+ - [_] Lesbian
+ - [_] Gay
+ - [_] Bisexual
+ - [_] Transgender
+ - [_] Queer
+ - [_] Intersex
+ - [_] Asexual
+ - [_] Aromantic
+ - [_] Aromantic Asexual
+ - [_] Aromantic Asexual v2
+ - [_] Pansexual
+ - [_] Omnisexual
+ - [_] Non-binary
+ - [_] Agender
+ - [_] Genderfluid
+ - [_] Genderqueer
+ - [_] Bigender
+ - [_] Bigender v2
+ - [_] Demisexual
+ - [_] Demiromantic
+ - [_] Polysexual
+ - [_] Polyamorous
+ - [_] Polyamorous v2
+ - [_] Ally
+ - [_] Apple Hunger Bar
+ - [_] Golden Apple Hunger Bar
+ - [_] Melon Hunger Bar
+ - [_] Sweet Berries Hunger Bar
+ - [_] Glow Berries Hunger Bar
+ - [_] Chorus Fruit Hunger Bar
+ - [_] Carrot Hunger Bar
+ - [_] Golden Carrot Hunger Bar
+ - [_] Potato Hunger Bar
+ - [_] Baked Potato Hunger Bar
+ - [_] Poisonous Potato Hunger Bar
+ - [_] Beetroot Hunger Bar
+ - [_] Dried Kelp Hunger Bar
+ - [_] Beef Hunger Bar
+ - [_] Porkchop Hunger Bar
+ - [_] Mutton Hunger Bar
+ - [_] Chicken Hunger Bar
+ - [_] Rabbit Hunger Bar
+ - [_] Cod Hunger Bar
+ - [_] Salmon Hunger Bar
+ - [_] Tropical Fish Hunger Bar
+ - [_] Pufferfish Hunger Bar
+ - [_] Bread Hunger Bar
+ - [_] Cookie Hunger Bar
+ - [_] Cake Hunger Bar
+ - [_] Pumpkin Pie Hunger Bar
+ - [_] Rotten Flesh Hunger Bar
+ - [_] Spider Eye Hunger Bar
+ - [_] Mushroom Stew Hunger Bar
+ - [_] Beetroot Soup Hunger Bar
+ - [_] Rabbit Stew Hunger Bar
+ - [_] Suspicious Stew Hunger Bar
+ - [_] Honey Hunger Bar
+ - [_] Gray Hotbar Selector
+ - [_] Black Hotbar Selector
+ - [_] Brown Hotbar Selector
+ - [_] Red Hotbar Selector
+ - [_] Orange Hotbar Selector
+ - [_] Yellow Hotbar Selector
+ - [_] Lime Hotbar Selector
+ - [_] Green Hotbar Selector
+ - [_] Cyan Hotbar Selector
+ - [_] Light Blue Hotbar Selector
+ - [_] Blue Hotbar Selector
+ - [_] Purple Hotbar Selector
+ - [_] Magenta Hotbar Selector
+ - [_] Pink Hotbar Selector
+ - [_] Gray Widgets
+ - [_] Black Widgets
+ - [_] Brown Widgets
+ - [_] Red Widgets
+ - [_] Orange Widgets
+ - [_] Yellow Widgets
+ - [_] Lime Widgets
+ - [_] Green Widgets
+ - [_] Cyan Widgets
+ - [_] Light Blue Widgets
+ - [_] Blue Widgets
+ - [_] Purple Widgets
+ - [_] Magenta Widgets
+ - [_] Pink Widgets
+ - [_] No Panorama Overlay
+ - [_] Classic Panorama
+ - [_] Ocean Panorama
+ - [_] Village Panorama
+ - [_] Bees Panorama
+ - [_] Nether Panorama
+ - [_] Amethyst Geode Panorama
+ - [_] Sunset Valley Panorama
+ - [_] Mangrove Swamp Panorama
+ - [_] Cherry Grove Panorama
+ - [_] Trial Chamber Panorama
+ - [_] Pale Garden Panorama
+ - [_] The End Panorama
+ - [_] Pack Panorama
+ - [_] Nostalgia Panorama
+ - [_] Oceanside Extreme Hills Panorama
+ - [_] Lakeside Sunset Panorama
+ - [_] Underground Lava Pool Panorama
+ - [_] TU69 Tutorial World Panorama (Legacy Console)
+ - [_] Stridey's Resource Pack Dev World Panorama
+ - [_] Season 1
+ - [_] Season 2
+ - [_] Season 3
+ - [_] Season 4
+ - [_] Season 5
+ - [_] Season 6
+ - [_] Season 7
+ - [_] Season 8
+ - [_] Season 9
+ - [X] Dirt Options Background
+ - [X] Stone Options Background
+ - [X] Smooth Stone Options Background
+ - [X] Granite Options Background
+ - [X] Polished Granite Options Background
+ - [X] Diorite Options Background
+ - [X] Polished Diorite Options Background
+ - [X] Andesite Options Background
+ - [X] Polished Andesite Options Background
+ - [X] Deepslate Options Background
+ - [X] Polished Deepslate Options Background
+ - [X] Cobblestone Options Background
+ - [X] Mossy Cobblestone Options Background
+ - [X] Tuff Options Background
+ - [X] Calcite Options Background
+ - [X] Snow Options Background
+ - [X] Prismarine Options Background
+ - [X] Prismarine Bricks Options Background
+ - [X] Dark Prismarine Options Background
+ - [X] Grass Options Background
+ - [X] Moss Options Background
+ - [X] Tube Coral Options Background
+ - [X] Brain Coral Options Background
+ - [X] Bubble Coral Options Background
+ - [X] Fire Coral Options Background
+ - [X] Horn Coral Options Background
+ - [X] Netherrack Options Background
+ - [X] Basalt Options Background
+ - [X] Smooth Basalt Options Background
+ - [X] Polished Basalt Options Background
+ - [X] Blackstone Options Background
+ - [X] Polished Blackstone Options Background
+ - [X] Lava Options Background
+ - [X] End Stone Options Background
+ - [X] Bedrock Options Background
+ - [X] Oak Planks Options Background
+ - [X] Spruce Planks Options Background
+ - [X] Birch Planks Options Background
+ - [X] Jungle Planks Options Background
+ - [X] Acacia Planks Options Background
+ - [X] Dark Oak Planks Options Background
+ - [X] Mangrove Planks Options Background
+ - [X] Cherry Planks Options Background
+ - [X] Bamboo Planks Options Background
+ - [X] Crimson Planks Options Background
+ - [X] Warped Planks Options Background
+ - [X] Bamboo Options Background
+ - [X] Coal Block Options Background
+ - [X] Iron Block Options Background
+ - [X] Copper Block Options Background
+ - [X] Exposed Copper Block Options Background
+ - [X] Weathered Copper Block Options Background
+ - [X] Oxidized Copper Block Options Background
+ - [X] Redstone Block Options Background
+ - [X] Lapis Lazuli Block Options Background
+ - [X] Gold Block Options Background
+ - [X] Diamond Block Options Background
+ - [X] Emerald Block Options Background
+ - [X] Amethyst Block Options Background
+ - [X] Quartz Block Options Background
+ - [X] Netherite Block Options Background
+ - [X] Ancient Debris Options Background
+ - [X] Slime Block Options Background
+ - [X] Honey Block Options Background
+ - [X] Honeycomb Options Background
+ - [X] White Concrete Options Background
+ - [X] Light Gray Concrete Options Background
+ - [X] Gray Concrete Options Background
+ - [X] Black Concrete Options Background
+ - [X] Brown Concrete Options Background
+ - [X] Red Concrete Options Background
+ - [X] Orange Concrete Options Background
+ - [X] Yellow Concrete Options Background
+ - [X] Lime Concrete Options Background
+ - [X] Green Concrete Options Background
+ - [X] Cyan Concrete Options Background
+ - [X] Light Blue Concrete Options Background
+ - [X] Blue Concrete Options Background
+ - [X] Purple Concrete Options Background
+ - [X] Magenta Concrete Options Background
+ - [X] Pink Concrete Options Background
+ - [_] Alpha Minecraft Logo
+ - [_] Classic Minecraft Logo
+ - [_] Dirt Background
+ - [_] Alpha Foliage
+ - [_] Classic Ores
+ - [_] Old Cobblestone
+ - [_] Pre-1.18 Stripped Dark Oak
+ - [_] Old Planks
+ - [_] Old Gravel
+ - [_] Old Netherrack
+ - [_] Old Lava
+ - [_] Old Obsidian
+ - [_] Old Metal Blocks
+ - [_] Old Water
+ - [_] Old Ice
+ - [_] Old Lapis Block
+ - [_] Old Sponge
+ - [_] Old Wool Colors
+ - [_] Old Shulker Colors
+ - [_] Old Fireflies
+ - [_] Old Spawn Eggs
+ - [_] Old Redstone Torch
+ - [_] Snoutless Pigs
+ - [_] Snoutless Cows
+ - [_] Classic Sheep
+ - [_] Kinda Classic Sheep
+ - [_] Poppy to Rose
+ - [_] Bed Icons
+ - [_] Rename 'Terracotta' to 'Hardened Clay'
+ - [_] Rename 'Dirt Path' to 'Grass Path'
+ - [_] Rename 'Pottery Sherd' to 'Pottery Shard'
+ - [_] Blue Widgets Highlight
+ - [_] Old Enchantment Glint
+ - [_] Zombie Pigman
+ - [_] Oarless Boats
+ - [_] Old Door Sound
+ - [_] Old Alex & Steve
+ - [_] Old Damage Sound
+ - [_] Old Explosion Sound
+ - [_] Old Level Up Sound
+ - [_] Hardcore Darkness
+ - [_] Smiley Axolotls
+ - [_] Green Axolotl
+ - [_] Beeralis
+ - [_] Spinning Skull on Fire Painting
+ - [_] Sus Sand and Gravel
+ - [_] Soyjak Vault
+ - [_] Xisuma Turtle
+ - [_] Xisuma Squids
+ - [_] Wandering Xisuma
+ - [_] Darth Xisuma Piglins
+ - [_] Technoblade Pigs
+ - [_] Stridey Striders
+ - [_] Emeralds to Rubies
+ - [_] Wither Bee
+ - [_] ilmango Golden Apples
+ - [_] English Enchanting Table
+ - [_] Standard Galactic Alphabet
+ - [_] Bacon Beam
+ - [_] Phantom Rain
+ - [_] WHAT
+ - [_] Useless Spyglass
+ - [_] Screaming Goats Meme
+ - [_] I Wish It Could Be Christmas Everyday
+ - [_] Honey Slime
+ - [_] Unique Dyes
+ - [_] White Slime
+ - [_] Light Gray Slime
+ - [_] Gray Slime
+ - [_] Black Slime
+ - [_] Brown Slime
+ - [_] Red Slime
+ - [_] Orange Slime
+ - [_] Yellow Slime
+ - [_] Green Slime
+ - [_] Cyan Slime
+ - [_] Light Blue Slime
+ - [_] Blue Slime
+ - [_] Purple Slime
+ - [_] Magenta Slime
+ - [_] Pink Slime
+ - [_] White Elytra
+ - [_] Gray Elytra
+ - [_] Black Elytra
+ - [_] Brown Elytra
+ - [_] Red Elytra
+ - [_] Orange Elytra
+ - [_] Yellow Elytra
+ - [_] Lime Elytra
+ - [_] Green Elytra
+ - [_] Cyan Elytra
+ - [_] Light Blue Elytra
+ - [_] Blue Elytra
+ - [_] Purple Elytra
+ - [_] Magenta Elytra
+ - [_] Pink Elytra
+ - [_] White Enchantment Glint
+ - [_] Red Enchantment Glint
+ - [_] Orange Enchantment Glint
+ - [_] Yellow Enchantment Glint
+ - [_] Lime Enchantment Glint
+ - [_] Green Enchantment Glint
+ - [_] Cyan Enchantment Glint
+ - [_] Light Blue Enchantment Glint
+ - [_] Blue Enchantment Glint
+ - [_] Magenta Enchantment Glint
+ - [_] Pink Enchantment Glint
+ - [_] Rainbow Enchantment Glint
+ - [_] 'A Minecraft Movie' Logo
+ - [_] Bedrock Piston Arms
+ - [_] Bedrock Boom
+ - [_] Bedrock Map
+ - [_] Bedrock Ender Dragon Ball
+ - [_] Bedrock Inventory Slot Highlight
+ - [_] Dungeons Creepers
+ - [_] Dungeons Mossy Skeleton
+ - [_] Dungeons Alex & Steve
+ - [_] Dungeons Dirt
+ - [_] Dungeons Stone
+ - [_] Dungeons Terracotta
+ - [_] Super Smash Bros Enderman
+ - [_] Legacy Bedrock Dried Kelp
+ - [_] Legacy Console Emerald
+ - [_] Legacy Console Snowball
+ - [_] Earth Wooly Cow
+ - [_] Item Stitching Fix
+ - [_] Updated Observer Texture
+ - [_] Updated Stat Icon Textures
+ - [_] Updated Spectator Icon Textures
+ - [_] Redstone Wire Fix
+ - [_] Big Dripleaf Stem Fix
+ - [_] Small Dripleaf Stem Fix
+ - [_] Consistent White Outlines
+ - [_] Consistent Blank Decorated Pot
+ - [_] Consistent Buckets
+ - [_] Consistent Tadpole Bucket
+ - [_] Cactus Bottom Fix
+ - [_] Consistent Helmets
+ - [_] Brighter Rib Armor Trim
+ - [_] Hanging Sign Logs
+ - [_] Pixel Consistent Ghast
+ - [_] Pixel Consistent Elder Guardian
+ - [_] Pixel Consistent Wither
+ - [_] Pixel Consistent Tripwire
+ - [_] Pixel Consistent Signs
+ - [_] Pixel Consistent Experience Orbs
+ - [_] Pixel Consistent Beacon Beam
+ - [_] Pixel Consistent Sonic Boom
+ - [_] Pixel Consistent Guardian Beam
+ - [_] Soul Soil Soul Campfire
+ - [_] Blaze's Rods Fix
+ - [_] Slime Particle Fix
+ - [_] Nicer Fast Leaves
+ - [_] Proper Break Particles
+ - [_] Don't Eat the Bowl!
+ - [_] Iron Bars Fix
+ - [_] Consistent Smooth Stone
+ - [_] Sandstone Wall Top Fix
+ - [_] Double Slab Fix
+ - [_] Corrected Item Holding
+ - [_] Hoe Fix
+ - [_] Cloud Fog Fix
+
+# Tweaks that require magic:
+
+ - *More Zombies*
+    > Although marked as incompatible, selecting all Zombie skins enables randomized
+    > variants when using mods such as OptiFine or other alternatives that enable both
+    > random entity textures and custom entity models. This only works when selecting ALL
+    > packs in this category.
+
+## Conflicts
+
+Can be implemented using the `conflicts` feature:
+
+ - *Glass Doors & Trapdoors* & *3D Doors & Trapdoors*
+ - *2d Spyglass* & *Accurate Spyclass*
+ - *Dark UI* & *Hotbar-Style Inventory Slot Highlight*
+    
+
+# Tweaks that could be presented with more intuitive UI
+
+ - GUI > Crosshairs (Select crosshair style)
+ - GUI > Hearts (Select heart color)
+ - GUI > Hunger Bars (Select hunger bar style)
+ - GUI > Hotbar Selector (Select hotbar selector color)
+ - GUI > Widgets (Select GUI widgets color)
+ - GUI > Panorama (Select panorama)
+ - GUI > Options background (Select block texture to use as options background)
+ - Peace & Quiet

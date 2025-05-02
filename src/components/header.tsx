@@ -106,8 +106,10 @@ export default function Header() {
     return (
         <header
             className={cn(
-                "bg-background/95 sticky top-0 z-1 grid grid-cols-[2fr_3fr_2fr] items-center p-2 shadow-lg backdrop-blur",
-                scroll.y && scroll.y > 0 && "border-b border-dashed",
+                "sticky top-0 z-1 grid grid-cols-[2fr_3fr_2fr] items-center p-2",
+                scroll.y
+                    && scroll.y > 0
+                    && "bg-background/95 border-b border-dashed shadow-lg backdrop-blur",
             )}
         >
             <HeaderStart />

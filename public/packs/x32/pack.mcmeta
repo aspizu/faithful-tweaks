@@ -1,0 +1,10 @@
+{
+  "pack": {
+    "pack_format": 71,
+    "description": "The go-to 32x resource pack.\n§8April 2025 Pre-release",
+    "supported_formats": {
+      "min_inclusive": 71,
+      "max_inclusive": 71
+    }
+  }
+}

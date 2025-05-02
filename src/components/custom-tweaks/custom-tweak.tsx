@@ -5,10 +5,13 @@ import {customTweaks} from "@/lib/tweaks/tweak"
 export interface CustomTweakProps {
     id: `custom-${string}`
     children?: any
+    onCheckedChange?: (value: boolean) => void
 }
 
-export default function CustomTweak({id, children}: CustomTweakProps) {
-    const {title, description} = customTweaks[id]
+export default function CustomTweak({id, children, onCheckedChange}: CustomTweakProps) {
+    const {
+        manifest: {title, description},
+    } = customTweaks[id]
     return (
         <div className="overlapping-grid-layer flex h-full w-full flex-col gap-2 rounded-xl border bg-transparent p-2">
             <div className="flex">
@@ -23,7 +26,10 @@ export default function CustomTweak({id, children}: CustomTweakProps) {
                 </div>
                 <Switch
                     checked={tweaks.value.includes(id)}
-                    onCheckedChange={setTweakSelection(id)}
+                    onCheckedChange={(value) => {
+                        setTweakSelection(id)(value)
+                        onCheckedChange?.(value)
+                    }}
                 />
             </div>
             {children}

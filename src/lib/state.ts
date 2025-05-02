@@ -8,6 +8,8 @@ export const tweaks = signal<string[]>([])
 
 export const search = signal<string>("")
 
+export const customOptionsBackgroundTexture = signal<string | null>(null)
+
 export function createShareURL() {
     const data = pack.value + "," + tweaks.value.join(",")
     return `${window.location.origin}/share?data=${data}`

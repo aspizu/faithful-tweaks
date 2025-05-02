@@ -26,7 +26,7 @@ export function AppSidebar() {
                                 .map((tweak) => (
                                     <SidebarMenuItem key={tweak}>
                                         <SidebarMenuButton>
-                                            {customTweaks[tweak].title}
+                                            {customTweaks[tweak].manifest.title}
                                         </SidebarMenuButton>
                                         <SidebarMenuAction
                                             onClick={() => {
