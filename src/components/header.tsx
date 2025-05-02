@@ -15,7 +15,7 @@ function HeaderStart() {
         <div className="flex items-center gap-2 justify-self-start">
             <SidebarTrigger className="mr-auto" />
             <img
-                srcSet="/public/title_1x.png 1x, /public/title_2x.png 2x"
+                srcSet="/title_1x.png 1x, /title_2x.png 2x"
                 className="justify-self-center"
                 alt="Faithful Tweaks"
             />

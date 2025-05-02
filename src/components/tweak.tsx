@@ -81,8 +81,8 @@ export default function Tweak({
     const isUnsupported = !supported.includes(pack.value)
     const previewImage =
         isUnsupported ?
-            `/public/tweaks/${id}/${supported[0]}/preview.png`
-        :   `/public/tweaks/${id}/${pack.value}/preview.png`
+            `/tweaks/${id}/${supported[0]}/preview.png`
+        :   `/tweaks/${id}/${pack.value}/preview.png`
     function onCheckedChange(value: boolean) {
         tweaks.value = produce(tweaks.value, (tweaks) => {
             const index = tweaks.indexOf(id)

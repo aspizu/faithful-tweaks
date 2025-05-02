@@ -15,10 +15,7 @@ export async function createPackage() {
         if (conflict.tweaks.every((tweakId) => tweaks.value.includes(tweakId))) {
             resolved.push(...conflict.tweaks)
             for (const file of conflict.files) {
-                await addAsset(
-                    `/public/conflicts/${conflictId}/${pack.value}/${file}`,
-                    file,
-                )
+                await addAsset(`/conflicts/${conflictId}/${pack.value}/${file}`, file)
             }
         }
     }
@@ -28,7 +25,7 @@ export async function createPackage() {
         const {files} = data.tweaks[tweakId]
         for (const file of files) {
             if (file === "preview.png") continue
-            await addAsset(`/public/tweaks/${tweakId}/${pack.value}/${file}`, file)
+            await addAsset(`/tweaks/${tweakId}/${pack.value}/${file}`, file)
         }
     }
     zip.file(
