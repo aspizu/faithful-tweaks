@@ -2,11 +2,10 @@ import {Alert, AlertDescription, AlertTitle} from "@/components/ui/alert"
 import {Button} from "@/components/ui/button"
 import {Switch} from "@/components/ui/switch"
 import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip"
-import {pack, tweaks} from "@/lib/state"
+import {pack, setTweakSelection, tweaks} from "@/lib/state"
 import {getPackName, Manifest} from "@/lib/tweaks/tweak"
 import {cn} from "@/lib/utils"
 import {SiDiscord, SiGithub} from "@icons-pack/react-simple-icons"
-import {produce} from "immer"
 import {BanIcon, LinkIcon, MailIcon} from "lucide-react"
 
 function UnsupportedAlert() {
@@ -83,21 +82,7 @@ export default function Tweak({
         isUnsupported ?
             `/tweaks/${id}/${supported[0]}/preview.png`
         :   `/tweaks/${id}/${pack.value}/preview.png`
-    function onCheckedChange(value: boolean) {
-        tweaks.value = produce(tweaks.value, (tweaks) => {
-            const index = tweaks.indexOf(id)
-            if (value) {
-                if (index === -1) {
-                    tweaks.push(id)
-                }
-            } else {
-                if (index !== -1) {
-                    tweaks.splice(index, 1)
-                }
-            }
-            tweaks.sort()
-        })
-    }
+
     return (
         <div className="overlapping-grid place-items-center">
             <div
@@ -120,7 +105,7 @@ export default function Tweak({
                     <Switch
                         disabled={isUnsupported}
                         checked={tweaks.value.includes(id)}
-                        onCheckedChange={onCheckedChange}
+                        onCheckedChange={setTweakSelection(id)}
                     />
                 </div>
                 <img className="mt-auto aspect-[4/3] rounded-sm" src={previewImage} />

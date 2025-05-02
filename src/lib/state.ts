@@ -1,5 +1,6 @@
 import {supported} from "@/lib/tweaks/tweak"
 import {signal} from "@preact/signals-react"
+import {produce} from "immer"
 
 export const pack = signal<string>(supported[0].id)
 
@@ -17,4 +18,22 @@ export function loadShareURL(shareURL: string) {
     const [packValue, ...tweaksValue] = data.split(",")
     pack.value = packValue
     tweaks.value = tweaksValue
+}
+
+export function setTweakSelection(id: string) {
+    return (value: boolean) => {
+        tweaks.value = produce(tweaks.value, (tweaks) => {
+            const index = tweaks.indexOf(id)
+            if (value) {
+                if (index === -1) {
+                    tweaks.push(id)
+                }
+            } else {
+                if (index !== -1) {
+                    tweaks.splice(index, 1)
+                }
+            }
+            tweaks.sort()
+        })
+    }
 }

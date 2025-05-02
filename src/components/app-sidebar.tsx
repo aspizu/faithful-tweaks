@@ -9,9 +9,8 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import {tweaks} from "@/lib/state"
-import {data} from "@/lib/tweaks/tweak"
-import {produce} from "immer"
+import {setTweakSelection, tweaks} from "@/lib/state"
+import {customTweaks, data} from "@/lib/tweaks/tweak"
 import {XIcon} from "lucide-react"
 
 export function AppSidebar() {
@@ -22,29 +21,38 @@ export function AppSidebar() {
                     <SidebarGroupContent>
                         <SidebarGroupLabel>Selected Tweaks</SidebarGroupLabel>
                         <SidebarMenu>
-                            {tweaks.value.map((tweak) => (
-                                <SidebarMenuItem key={tweak}>
-                                    <SidebarMenuButton>
-                                        {data.tweaks[tweak].manifest.title}
-                                    </SidebarMenuButton>
-                                    <SidebarMenuAction
-                                        onClick={() => {
-                                            tweaks.value = produce(
-                                                tweaks.value,
-                                                (tweaks) => {
-                                                    const index = tweaks.indexOf(tweak)
-                                                    if (index !== -1) {
-                                                        tweaks.splice(index, 1)
-                                                    }
-                                                    tweaks.sort()
-                                                },
-                                            )
-                                        }}
-                                    >
-                                        <XIcon />
-                                    </SidebarMenuAction>
-                                </SidebarMenuItem>
-                            ))}
+                            {tweaks.value
+                                .filter((tweak) => tweak.startsWith("custom-"))
+                                .map((tweak) => (
+                                    <SidebarMenuItem key={tweak}>
+                                        <SidebarMenuButton>
+                                            {customTweaks[tweak].title}
+                                        </SidebarMenuButton>
+                                        <SidebarMenuAction
+                                            onClick={() => {
+                                                setTweakSelection(tweak)(false)
+                                            }}
+                                        >
+                                            <XIcon />
+                                        </SidebarMenuAction>
+                                    </SidebarMenuItem>
+                                ))}
+                            {tweaks.value
+                                .filter((tweak) => !tweak.startsWith("custom-"))
+                                .map((tweak) => (
+                                    <SidebarMenuItem key={tweak}>
+                                        <SidebarMenuButton>
+                                            {data.tweaks[tweak].manifest.title}
+                                        </SidebarMenuButton>
+                                        <SidebarMenuAction
+                                            onClick={() => {
+                                                setTweakSelection(tweak)(false)
+                                            }}
+                                        >
+                                            <XIcon />
+                                        </SidebarMenuAction>
+                                    </SidebarMenuItem>
+                                ))}
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>

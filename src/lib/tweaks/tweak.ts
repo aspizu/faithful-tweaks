@@ -46,3 +46,15 @@ export const supported = [
 export function getPackName(id: string) {
     return supported.find((pack) => pack.id === id)?.name ?? id
 }
+
+export const customTweaks: {
+    [key: string]: {
+        title: string
+        description: string
+    }
+} = {
+    "custom-menu-background": {
+        title: "Custom Menu Background",
+        description: "Replace the dirt background with any block texture.",
+    },
+}
