@@ -1,4 +1,4 @@
-import {supported} from "@/lib/tweaks/tweak"
+import {customPeaceAndQuiet, supported} from "@/lib/tweaks/tweak"
 import {signal} from "@preact/signals-react"
 import {produce} from "immer"
 
@@ -9,6 +9,10 @@ export const tweaks = signal<string[]>([])
 export const search = signal<string>("")
 
 export const customOptionsBackgroundTexture = signal<string | null>(null)
+
+export const customPeaceAndQuietSelection = signal<{
+    [K in keyof typeof customPeaceAndQuiet]?: boolean
+}>({})
 
 export function createShareURL() {
     const data = pack.value + "," + tweaks.value.join(",")

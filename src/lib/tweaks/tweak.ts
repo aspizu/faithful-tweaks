@@ -65,6 +65,25 @@ export const customTweaks: {
             category: "gui",
         },
     },
+    "custom-peace-and-quiet": {
+        manifest: {
+            id: "custom-peace-and-quiet",
+            title: "Peace and Quiet",
+            description: "Reduce volume of sounds.",
+            category: "misc",
+        },
+    },
+}
+
+export const customPeaceAndQuiet = {
+    rain: {
+        name: "Rain 🌧️",
+        files: [],
+    },
+    thunder: {
+        name: "Thunder ⚡",
+        files: [],
+    },
 }
 
 export const customOptionsBackgroundTextures = [

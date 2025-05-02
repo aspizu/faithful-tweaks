@@ -1,5 +1,6 @@
 import data from "@/assets/data.json"
 import CustomOptionsBackgroundTweak from "@/components/custom-tweaks/custom-options-background-tweak"
+import CustomPeaceAndQuietTweak from "@/components/custom-tweaks/custom-peace-and-quiet-tweak"
 import Tweak from "@/components/tweak"
 import {
     Accordion,
@@ -29,7 +30,9 @@ export default function Gallery() {
                     <Category key={category} name={category}>
                         {tweaks!.map((tweak) =>
                             tweak.manifest.id === "custom-options-background" ?
-                                <CustomOptionsBackgroundTweak />
+                                <CustomOptionsBackgroundTweak key="custom-options-background" />
+                            : tweak.manifest.id === "custom-peace-and-quiet" ?
+                                <CustomPeaceAndQuietTweak key="custom-peace-and-quiet" />
                             :   <Tweak
                                     key={tweak.manifest.id}
                                     manifest={tweak.manifest as Manifest}

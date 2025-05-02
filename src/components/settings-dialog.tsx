@@ -42,6 +42,7 @@ export default function SettingsDialog() {
                     onValueChange={(value) => {
                         const removed = []
                         tweaks.value = tweaks.value.filter((tweak) => {
+                            if (tweak.startsWith("custom-")) return true
                             if (data.tweaks[tweak].manifest.supported.includes(value)) {
                                 return true
                             }
