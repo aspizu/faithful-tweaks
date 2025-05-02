@@ -1,8 +1,7 @@
 import {isDownloadDialogOpen} from "@/components/download-dialog"
-import Settings from "@/components/settings"
+import {isSettingsDialogOpen, default as Settings} from "@/components/settings-dialog"
 import {isShareDialogOpen} from "@/components/share-dialog"
 import {Button} from "@/components/ui/button"
-import {Popover, PopoverTrigger} from "@/components/ui/popover"
 import {SearchBox} from "@/components/ui/searchbox"
 import {SidebarTrigger} from "@/components/ui/sidebar"
 import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip"
@@ -45,43 +44,36 @@ function HeaderEnd() {
 
     return (
         <div className="flex items-center gap-2 justify-self-end">
-            <Popover>
-                <Tooltip>
-                    <PopoverTrigger asChild>
-                        <TooltipTrigger asChild>
-                            <Button
-                                size="icon"
-                                className="size-7"
-                                variant="ghost"
-                                asChild
-                            >
-                                <a
-                                    href="https://github.com/aspizu/faithful-tweaks"
-                                    rel="noopener noreferrer"
-                                    target="_blank"
-                                >
-                                    <SiGithub />
-                                </a>
-                            </Button>
-                        </TooltipTrigger>
-                    </PopoverTrigger>
-                    <TooltipContent>GitHub</TooltipContent>
-                </Tooltip>
-                <Settings />
-            </Popover>
-            <Popover>
-                <Tooltip>
-                    <PopoverTrigger asChild>
-                        <TooltipTrigger asChild>
-                            <Button size="icon" className="size-7" variant="ghost">
-                                <SettingsIcon />
-                            </Button>
-                        </TooltipTrigger>
-                    </PopoverTrigger>
-                    <TooltipContent>Settings</TooltipContent>
-                </Tooltip>
-                <Settings />
-            </Popover>
+            <Tooltip>
+                <TooltipTrigger asChild>
+                    <Button size="icon" className="size-7" variant="ghost" asChild>
+                        <a
+                            href="https://github.com/aspizu/faithful-tweaks"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <SiGithub />
+                        </a>
+                    </Button>
+                </TooltipTrigger>
+                <TooltipContent>GitHub</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+                <TooltipTrigger asChild>
+                    <Button
+                        size="icon"
+                        className="size-7"
+                        variant="ghost"
+                        onClick={() => {
+                            isSettingsDialogOpen.value = true
+                        }}
+                    >
+                        <SettingsIcon />
+                    </Button>
+                </TooltipTrigger>
+                <TooltipContent>Settings</TooltipContent>
+            </Tooltip>
+            <Settings />
             <Tooltip>
                 <TooltipTrigger asChild>
                     <Button
