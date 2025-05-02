@@ -1,0 +1,10 @@
+{
+    "semi": false,
+    "printWidth": 88,
+    "tabWidth": 4,
+    "bracketSpacing": false,
+    "experimentalOperatorPosition": "start",
+    "experimentalTernaries": true,
+    "endOfLine": "lf",
+    "plugins": ["prettier-plugin-tailwindcss"]
+}
