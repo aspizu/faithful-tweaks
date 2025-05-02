@@ -6,3 +6,15 @@ export const pack = signal<string>(supported[0].id)
 export const tweaks = signal<string[]>([])
 
 export const search = signal<string>("")
+
+export function createShareURL() {
+    const data = pack.value + "," + tweaks.value.join(",")
+    return `${window.location.origin}/share?data=${data}`
+}
+
+export function loadShareURL(shareURL: string) {
+    const data = shareURL.slice(window.location.origin.length + "/share?data=".length)
+    const [packValue, ...tweaksValue] = data.split(",")
+    pack.value = packValue
+    tweaks.value = tweaksValue
+}

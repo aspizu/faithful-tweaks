@@ -1,4 +1,6 @@
+import {isDownloadDialogOpen} from "@/components/download-dialog"
 import Settings from "@/components/settings"
+import {isShareDialogOpen} from "@/components/share-dialog"
 import {Button} from "@/components/ui/button"
 import {Popover, PopoverTrigger} from "@/components/ui/popover"
 import {SearchBox} from "@/components/ui/searchbox"
@@ -7,6 +9,7 @@ import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip"
 import {search} from "@/lib/state"
 import {createPackage} from "@/lib/tweaks/package"
 import {cn} from "@/lib/utils"
+import {SiGithub} from "@icons-pack/react-simple-icons"
 import {useWindowScroll} from "@uidotdev/usehooks"
 import {DownloadIcon, SettingsIcon, Share2Icon} from "lucide-react"
 
@@ -35,8 +38,37 @@ function HeaderCenter() {
 }
 
 function HeaderEnd() {
+    async function onDownload() {
+        await createPackage()
+        isDownloadDialogOpen.value = true
+    }
+
     return (
         <div className="flex items-center gap-2 justify-self-end">
+            <Popover>
+                <Tooltip>
+                    <PopoverTrigger asChild>
+                        <TooltipTrigger asChild>
+                            <Button
+                                size="icon"
+                                className="size-7"
+                                variant="ghost"
+                                asChild
+                            >
+                                <a
+                                    href="https://github.com/aspizu/faithful-tweaks"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                >
+                                    <SiGithub />
+                                </a>
+                            </Button>
+                        </TooltipTrigger>
+                    </PopoverTrigger>
+                    <TooltipContent>GitHub</TooltipContent>
+                </Tooltip>
+                <Settings />
+            </Popover>
             <Popover>
                 <Tooltip>
                     <PopoverTrigger asChild>
@@ -52,7 +84,14 @@ function HeaderEnd() {
             </Popover>
             <Tooltip>
                 <TooltipTrigger asChild>
-                    <Button size="icon" className="size-7" variant="ghost">
+                    <Button
+                        size="icon"
+                        className="size-7"
+                        variant="ghost"
+                        onClick={() => {
+                            isShareDialogOpen.value = true
+                        }}
+                    >
                         <Share2Icon />
                     </Button>
                 </TooltipTrigger>
@@ -60,7 +99,7 @@ function HeaderEnd() {
             </Tooltip>
             <Tooltip>
                 <TooltipTrigger asChild>
-                    <Button size="icon" className="size-7" onClick={createPackage}>
+                    <Button size="icon" className="size-7" onClick={onDownload}>
                         <DownloadIcon />
                     </Button>
                 </TooltipTrigger>
