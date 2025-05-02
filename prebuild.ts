@@ -2,6 +2,8 @@ import Bun from "bun"
 import fs from "fs/promises"
 import path from "path"
 
+console.log(process.cwd())
+
 async function listDirectories(basePath: string): Promise<string[]> {
     const entries = await fs.readdir(basePath)
     const dirs = await Promise.all(
