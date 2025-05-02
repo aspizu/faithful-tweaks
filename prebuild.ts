@@ -2,9 +2,6 @@ import Bun from "bun"
 import fs from "fs/promises"
 import path from "path"
 
-console.log(process.cwd())
-console.log(await listDirectories(process.cwd()))
-
 async function listDirectories(basePath: string): Promise<string[]> {
     const entries = await fs.readdir(basePath)
     const dirs = await Promise.all(
@@ -21,7 +18,9 @@ const data = {
     conflicts: {},
 }
 
-const tweakDirectories = await listDirectories("./public/tweaks")
+const tweakDirectories = await listDirectories(
+    path.join(process.cwd(), "public/tweaks"),
+)
 
 for (const tweakDirectory of tweakDirectories) {
     const manifest = await Bun.file(path.join(tweakDirectory, "tweak.json")).json()
@@ -41,7 +40,9 @@ for (const tweakDirectory of tweakDirectories) {
     }
 }
 
-const conflictDirectories = await listDirectories("./public/conflicts")
+const conflictDirectories = await listDirectories(
+    path.join(process.cwd(), "public/conflicts"),
+)
 
 for (const conflictDirectory of conflictDirectories) {
     const tweakList = path.basename(conflictDirectory).split("+")
@@ -55,4 +56,6 @@ for (const conflictDirectory of conflictDirectories) {
     }
 }
 
-await Bun.file("./src/assets/data.json").write(JSON.stringify(data))
+await Bun.file(path.join(process.cwd(), "src/assets/data.json")).write(
+    JSON.stringify(data),
+)
