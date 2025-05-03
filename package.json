@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite dev",
-        "build": "bun run prebuild.ts && vite build"
+        "build": "bun run prebuild.ts && vite build --base=/faithful-tweaks/"
     },
     "dependencies": {
         "@hookform/resolvers": "^5.0.1",
