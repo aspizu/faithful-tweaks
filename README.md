@@ -2,9 +2,9 @@
 
  - [X] Alternate Block Destruction *(TODO: x64)*
  - [X] Black Nether Bricks
- - [X] Cherry Picking *(TODO: x64)*
+ - [X] Cherry Picking
  - [X] Unbundled Hay Bales *(TODO: x64)*
- - [X] Unbundled Dried Kelp *(TODO: x64)*
+ - [X] Unbundled Dried Kelp
  - [X] Solid Honey
  - [ ] Solid Slime
  - [ ] Desaturated Resin
