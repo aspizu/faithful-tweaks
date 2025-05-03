@@ -80,8 +80,8 @@ export default function Tweak({
     const isUnsupported = !supported.includes(pack.value)
     const previewImage =
         isUnsupported ?
-            `/tweaks/${id}/${supported[0]}/preview.avif`
-        :   `/tweaks/${id}/${pack.value}/preview.avif`
+            `${import.meta.env.BASE_URL}/tweaks/${id}/${supported[0]}/preview.avif`
+        :   `${import.meta.env.BASE_URL}/tweaks/${id}/${pack.value}/preview.avif`
 
     return (
         <div className="overlapping-grid place-items-center">

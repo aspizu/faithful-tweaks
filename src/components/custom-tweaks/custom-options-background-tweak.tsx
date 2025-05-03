@@ -37,7 +37,7 @@ function TextureButton({texture}: {texture: string}) {
         >
             <img
                 key={texture}
-                src={`/packs/${pack.value}/assets/minecraft/textures/block/${texture}.png`}
+                src={`${import.meta.env.BASE_URL}/packs/${pack.value}/assets/minecraft/textures/block/${texture}.png`}
                 className="rendering-pixelated size-[64px] rounded"
             />
         </button>
