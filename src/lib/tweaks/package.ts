@@ -46,6 +46,12 @@ export async function createPackage() {
         }
     }
     zip.file(
+        "credits.txt",
+        `
+Credits:
+Vanilla Tweaks: https://vanillatweaks.net/`.slice(1),
+    )
+    zip.file(
         "pack.mcmeta",
         JSON.stringify({
             pack: {
