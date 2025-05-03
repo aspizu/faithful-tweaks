@@ -50,7 +50,7 @@ export async function createPackage() {
         JSON.stringify({
             pack: {
                 pack_format: 46,
-                description: "Made with https://faithfultweaks.io/",
+                description: `Made with ${location.origin}`,
             },
         }),
     )
