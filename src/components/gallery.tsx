@@ -21,7 +21,7 @@ export default function Gallery() {
         return tweak.manifest.category
     })
     return (
-        <div className="flex flex-col gap-2 p-2 pt-0">
+        <div className="flex grow flex-col gap-2 p-2 pt-0">
             <Accordion
                 type="multiple"
                 defaultValue={["custom", ...Object.keys(categories)]}
