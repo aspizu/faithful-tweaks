@@ -12,7 +12,7 @@ export default function CustomPeaceAndQuietTweak() {
             {Object.entries(customPeaceAndQuiet).map(([_id, {name}]) => {
                 const id = _id as keyof typeof customPeaceAndQuiet
                 return (
-                    <Label>
+                    <Label key={id}>
                         <Checkbox
                             checked={
                                 isSelected
