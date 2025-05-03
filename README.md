@@ -6,7 +6,7 @@
  - [X] Unbundled Hay Bales *(TODO: x64)*
  - [X] Unbundled Dried Kelp
  - [X] Solid Honey
- - [ ] Solid Slime
+ - [X] Solid Slime
  - [ ] Desaturated Resin
  - [ ] Desaturated Purpur
  - [ ] Desaturated Dark Oak
