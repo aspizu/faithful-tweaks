@@ -12,7 +12,6 @@ export interface Manifest {
         link?: string
     }
     category: string
-    version: string
     supported: string[]
     new?: boolean
 }

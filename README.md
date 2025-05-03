@@ -1,17 +1,17 @@
 # All Tweaks
 
- - [_] Alternate Block Destruction
- - [_] Black Nether Bricks
- - [_] Cherry Picking
- - [_] Unbundled Hay Bales
- - [_] Unbundled Dried Kelp
- - [_] Solid Honey
+ - [1] Alternate Block Destruction
+ - [1] Black Nether Bricks
+ - [1] Cherry Picking
+ - [1] Unbundled Hay Bales
+ - [1] Unbundled Dried Kelp
+ - [1] Solid Honey
  - [_] Solid Slime
  - [_] Desaturated Resin
  - [_] Desaturated Purpur
  - [_] Desaturated Dark Oak
- - [_] Horizontal Nuggets
- - [_] Vertical Nuggets
+ - [X] Horizontal Nuggets
+ - [X] Vertical Nuggets
  - [_] Softer Wool
  - [_] Brown Leather
  - [_] Red Iron Golem Flowers
@@ -527,7 +527,7 @@
  - [_] Classic Sheep
  - [_] Kinda Classic Sheep
  - [_] Poppy to Rose
- - [_] Bed Icons
+ - [X] Bed Icons
  - [_] Rename 'Terracotta' to 'Hardened Clay'
  - [_] Rename 'Dirt Path' to 'Grass Path'
  - [_] Rename 'Pottery Sherd' to 'Pottery Shard'

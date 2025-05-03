@@ -41,7 +41,7 @@ export async function createPackage() {
         resolved.push(tweakId)
         const {files} = data.tweaks[tweakId]
         for (const file of files) {
-            if (file === "preview.png") continue
+            if (file === "preview.avif") continue
             await addAsset(zip, `/tweaks/${tweakId}/${pack.value}/${file}`, file)
         }
     }
@@ -49,7 +49,7 @@ export async function createPackage() {
         "pack.mcmeta",
         JSON.stringify({
             pack: {
-                pack_format: 18,
+                pack_format: 46,
                 description: "Made with https://faithfultweaks.io/",
             },
         }),

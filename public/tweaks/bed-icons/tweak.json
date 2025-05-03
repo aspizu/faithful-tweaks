@@ -1,0 +1,9 @@
+{
+    "title": "Bed Icons",
+    "description": "Reverts bed items to icons rather than models, like they were prior to 1.12",
+    "author": {
+        "name": "aspizu",
+        "github": "aspizu"
+    },
+    "category": "retro"
+}

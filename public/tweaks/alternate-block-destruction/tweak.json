@@ -1,13 +1,9 @@
 {
     "title": "Alternate Block Destruction",
-    "description": "Changes the <span class=\"font-semibold text-red-400\">breaking animation</span> to a messy ring around the outside.",
+    "description": "Changes the breaking animation to a messy ring around the outside.",
     "author": {
         "name": "webaccount284",
-        "discord": "webaccount284",
-        "github": "aspizu",
-        "email": "aspizu@protonmail.com",
-        "link": "https://aspizu.github.io/"
+        "discord": "webaccount284"
     },
-    "category": "aesthetic",
-    "version": "1.20"
+    "category": "aesthetic"
 }
