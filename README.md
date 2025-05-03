@@ -12,7 +12,7 @@
  - [ ] Desaturated Dark Oak
  - [X] Horizontal Nuggets
  - [X] Vertical Nuggets
- - [ ] Softer Wool
+ - [X] Softer Wool
  - [ ] Brown Leather
  - [X] Red Iron Golem Flowers
  - [ ] Rename 'Stem' to 'Log'
