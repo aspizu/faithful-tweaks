@@ -14,7 +14,7 @@
  - [X] Vertical Nuggets
  - [ ] Softer Wool
  - [ ] Brown Leather
- - [ ] Red Iron Golem Flowers
+ - [X] Red Iron Golem Flowers
  - [ ] Rename 'Stem' to 'Log'
  - [ ] Colorful Enchanting Table Particles
  - [ ] HD Shield Banner Patterns
