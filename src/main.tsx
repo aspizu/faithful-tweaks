@@ -9,9 +9,7 @@ import {createRoot} from "react-dom/client"
 
 enableMapSet()
 
-if (window.location.pathname === "/share") {
-    loadShareURL(window.location.href)
-}
+loadShareURL()
 
 const root = createRoot(document.getElementById("root") as HTMLDivElement)
 

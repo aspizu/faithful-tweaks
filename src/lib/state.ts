@@ -1,4 +1,4 @@
-import {customPeaceAndQuiet, supported} from "@/lib/tweaks/tweak"
+import {customPeaceAndQuiet, data, supported} from "@/lib/tweaks/tweak"
 import {signal} from "@preact/signals-react"
 import {produce} from "immer"
 
@@ -13,18 +13,6 @@ export const customOptionsBackgroundTexture = signal<string | null>(null)
 export const customPeaceAndQuietSelection = signal<{
     [K in keyof typeof customPeaceAndQuiet]?: boolean
 }>({})
-
-export function createShareURL() {
-    const data = pack.value + "," + tweaks.value.join(",")
-    return `${window.location.origin}/share?data=${data}`
-}
-
-export function loadShareURL(shareURL: string) {
-    const data = shareURL.slice(window.location.origin.length + "/share?data=".length)
-    const [packValue, ...tweaksValue] = data.split(",")
-    pack.value = packValue
-    tweaks.value = tweaksValue
-}
 
 export function setTweakSelection(id: string) {
     return (value: boolean) => {
@@ -42,4 +30,53 @@ export function setTweakSelection(id: string) {
             tweaks.sort()
         })
     }
+}
+
+interface Share {
+    pack: string
+    tweaks: number[]
+    cobt: string | null
+    cpnq: string[]
+}
+
+export function createShareURL() {
+    const url = new URL(window.location.href)
+    url.searchParams.set(
+        "share",
+        JSON.stringify({
+            pack: pack.value,
+            tweaks: tweaks.value
+                .filter((tweak) => !tweak.startsWith("custom-"))
+                .map((tweak) => data.tweaks[tweak].manifest.index),
+            cobt: customOptionsBackgroundTexture.value,
+            cpnq: Object.entries(customPeaceAndQuietSelection.value)
+                .filter(([_, value]) => value)
+                .map(([key]) => key),
+        } satisfies Share),
+    )
+    return url.toString()
+}
+
+export function loadShareURL() {
+    const url = new URL(window.location.href)
+    const share = url.searchParams.get("share")
+    if (!share) return
+    const shared = JSON.parse(share) as Share
+    pack.value = shared.pack
+    const newtweaks = shared.tweaks.map(
+        (index: number) =>
+            Object.values(data.tweaks).find((tweak) => tweak.manifest.index === index)!
+                .manifest.id,
+    )
+    if (shared.cobt) {
+        newtweaks.push("custom-options-background")
+    }
+    if (shared.cpnq.length > 0) {
+        newtweaks.push("custom-peace-and-quiet")
+    }
+    tweaks.value = newtweaks
+    customOptionsBackgroundTexture.value = shared.cobt
+    customPeaceAndQuietSelection.value = Object.fromEntries(
+        shared.cpnq.map((key) => [key, true]),
+    )
 }

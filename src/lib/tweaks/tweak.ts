@@ -1,6 +1,7 @@
 import _data from "@/assets/data.json"
 
 export interface Manifest {
+    index: number
     id: string
     title: string
     description: string
