@@ -4,7 +4,7 @@ import {Switch} from "@/components/ui/switch"
 import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip"
 import {pack, setTweakSelection, tweaks} from "@/lib/state"
 import {getPackName, Manifest} from "@/lib/tweaks/tweak"
-import {cn} from "@/lib/utils"
+import {BASE_URL, cn} from "@/lib/utils"
 import {SiDiscord, SiGithub} from "@icons-pack/react-simple-icons"
 import {BanIcon, LinkIcon, MailIcon} from "lucide-react"
 
@@ -80,8 +80,8 @@ export default function Tweak({
     const isUnsupported = !supported.includes(pack.value)
     const previewImage =
         isUnsupported ?
-            `${import.meta.env.BASE_URL}/tweaks/${id}/${supported[0]}/preview.avif`
-        :   `${import.meta.env.BASE_URL}/tweaks/${id}/${pack.value}/preview.avif`
+            `${BASE_URL}/tweaks/${id}/${supported[0]}/preview.avif`
+        :   `${BASE_URL}/tweaks/${id}/${pack.value}/preview.avif`
 
     return (
         <div className="overlapping-grid place-items-center">

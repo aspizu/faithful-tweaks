@@ -14,3 +14,7 @@ export function setSignal<T>(signal: {value: T}) {
 export function plural(value: number, singular: string, plural: string) {
     return value === 1 ? singular : plural
 }
+
+export const BASE_URL = import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL
+
+console.log("import.meta.env.BASE_URL =", import.meta.env.BASE_URL)

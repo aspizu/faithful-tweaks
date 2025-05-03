@@ -7,7 +7,7 @@ import {SidebarTrigger} from "@/components/ui/sidebar"
 import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip"
 import {search} from "@/lib/state"
 import {createPackage} from "@/lib/tweaks/package"
-import {cn} from "@/lib/utils"
+import {BASE_URL, cn} from "@/lib/utils"
 import {SiGithub} from "@icons-pack/react-simple-icons"
 import {useWindowScroll} from "@uidotdev/usehooks"
 import {DownloadIcon, SettingsIcon, Share2Icon} from "lucide-react"
@@ -17,7 +17,7 @@ function HeaderStart() {
         <div className="flex items-center gap-2 justify-self-start">
             <SidebarTrigger className="mr-auto" />
             <img
-                srcSet={`${import.meta.env.BASE_URL}/title_1x.png 1x, ${import.meta.env.BASE_URL}/title_2x.png 2x`}
+                srcSet={`${BASE_URL}/title_1x.png 1x, ${BASE_URL}/title_2x.png 2x`}
                 className="justify-self-center"
                 alt="Faithful Tweaks"
             />

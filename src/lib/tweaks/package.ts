@@ -1,10 +1,11 @@
 import {customOptionsBackgroundTexture, pack, tweaks} from "@/lib/state"
 import {data} from "@/lib/tweaks/tweak"
+import {BASE_URL} from "@/lib/utils"
 import {saveAs} from "file-saver"
 import JSZip from "jszip"
 
 async function addAsset(zip: JSZip, path: string, name: string) {
-    const response = await fetch(import.meta.env.BASE_URL + path)
+    const response = await fetch(BASE_URL + path)
     const blob = await response.blob()
     zip.file(name, blob)
 }

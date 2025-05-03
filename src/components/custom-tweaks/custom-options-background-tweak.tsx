@@ -6,7 +6,7 @@ import {
     tweaks,
 } from "@/lib/state"
 import {customOptionsBackgroundTextures} from "@/lib/tweaks/tweak"
-import {cn} from "@/lib/utils"
+import {BASE_URL, cn} from "@/lib/utils"
 
 export default function CustomOptionsBackgroundTweak() {
     return (
@@ -37,7 +37,7 @@ function TextureButton({texture}: {texture: string}) {
         >
             <img
                 key={texture}
-                src={`${import.meta.env.BASE_URL}/packs/${pack.value}/assets/minecraft/textures/block/${texture}.png`}
+                src={`${BASE_URL}/packs/${pack.value}/assets/minecraft/textures/block/${texture}.png`}
                 className="rendering-pixelated size-[64px] rounded"
             />
         </button>
