@@ -4,11 +4,13 @@ import {isShareDialogOpen} from "@/components/share-dialog"
 import {Button} from "@/components/ui/button"
 import {SearchBox} from "@/components/ui/searchbox"
 import {SidebarTrigger} from "@/components/ui/sidebar"
+import {Spinner} from "@/components/ui/spinner"
 import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip"
 import {search} from "@/lib/state"
 import {createPackage} from "@/lib/tweaks/package"
 import {BASE_URL, cn} from "@/lib/utils"
 import {SiGithub} from "@icons-pack/react-simple-icons"
+import {batch, useSignal} from "@preact/signals-react"
 import {useWindowScroll} from "@uidotdev/usehooks"
 import {DownloadIcon, SettingsIcon, Share2Icon} from "lucide-react"
 
@@ -37,11 +39,16 @@ function HeaderCenter() {
 }
 
 function HeaderEnd() {
+    const isDownloading = useSignal(false)
     async function onDownload() {
+        if (isDownloading.value) return
+        isDownloading.value = true
         await createPackage()
-        isDownloadDialogOpen.value = true
+        batch(() => {
+            isDownloading.value = false
+            isDownloadDialogOpen.value = true
+        })
     }
-
     return (
         <div className="flex items-center gap-2 justify-self-end">
             <Tooltip>
@@ -91,8 +98,15 @@ function HeaderEnd() {
             </Tooltip>
             <Tooltip>
                 <TooltipTrigger asChild>
-                    <Button size="icon" className="size-7" onClick={onDownload}>
-                        <DownloadIcon />
+                    <Button
+                        size="icon"
+                        className="size-7"
+                        onClick={onDownload}
+                        disabled={isDownloading.value}
+                    >
+                        {isDownloading.value ?
+                            <Spinner size="small" className="text-black" />
+                        :   <DownloadIcon />}
                     </Button>
                 </TooltipTrigger>
                 <TooltipContent>Download</TooltipContent>

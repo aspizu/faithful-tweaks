@@ -16,3 +16,7 @@ export function plural(value: number, singular: string, plural: string) {
 }
 
 export const BASE_URL = import.meta.env.BASE_URL?.slice(0, -1) as string
+
+export async function sleep(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms))
+}
