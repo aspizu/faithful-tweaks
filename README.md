@@ -16,11 +16,11 @@
  - [ ] Brown Leather
  - [X] Red Iron Golem Flowers
  - [ ] Rename 'Stem' to 'Log'
- - [ ] Colorful Enchanting Table Particles
+ - [X] Colorful Enchanting Table Particles *(TODO: x64)*
  - [ ] HD Shield Banner Patterns
  - [ ] Warm Glow
  - [ ] 1.21.2 Redstone Torch
- - [ ] Endless End Rods
+ - [X] Endless End Rods
  - [ ] Pink End Rods
  - [ ] Animated Campfire Items
  - [ ] Ashless Campfires
