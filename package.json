@@ -4,7 +4,7 @@
     "version": "0.1.0",
     "type": "module",
     "scripts": {
-        "dev": "vite dev",
+        "dev": "bun run prebuild.ts && vite dev",
         "build": "bun run prebuild.ts && vite build --base=/faithful-tweaks/"
     },
     "dependencies": {
