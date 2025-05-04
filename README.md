@@ -21,7 +21,7 @@
  - [ ] Warm Glow
  - [ ] 1.21.2 Redstone Torch
  - [X] Endless End Rods
- - [ ] Pink End Rods
+ - [X] Pink End Rods
  - [ ] Animated Campfire Items
  - [ ] Ashless Campfires
  - [ ] Glass Doors & Trapdoors
