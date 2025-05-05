@@ -23,7 +23,7 @@
  - [X] Endless End Rods
  - [X] Pink End Rods
  - [ ] Animated Campfire Items
- - [ ] Ashless Campfires
+ - [X] Ashless Campfires
  - [ ] Glass Doors & Trapdoors
  - [ ] Flint Tipped Arrows
  - [ ] Splash Bottle o' Enchanting

@@ -42,9 +42,6 @@ argparser.add_argument(
 argparser.add_argument("--discord", type=str, help="Author's Discord (optional)")
 argparser.add_argument("--email", type=str, help="Author's email (optional)")
 argparser.add_argument("--link", type=str, help="Author's link (optional)")
-argparser.add_argument(
-    "--supported", nargs="+", default=["x32"], help="List of supported platforms"
-)
 argparser.add_argument("--new", action="store_true", help="Mark this tweak as new")
 
 args = argparser.parse_args()
@@ -68,7 +65,6 @@ manifest = {
     "description": args.description,
     "author": author,
     "category": args.category,
-    "supported": args.supported,
 }
 if args.new:
     manifest["new"] = True
