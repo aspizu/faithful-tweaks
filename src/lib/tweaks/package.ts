@@ -58,11 +58,13 @@ export async function createPackage() {
             await addAsset(zip, `/tweaks/${tweakId}/${pack.value}/${file}`, file)
         }
     }
+    await addAsset(zip, "/LICENSE.txt", "/LICENSE.txt")
     zip.file(
         "credits.txt",
         `
 Credits:
-Vanilla Tweaks: https://vanillatweaks.net/`.slice(1),
+Vanilla Tweaks: https://vanillatweaks.net/
+Faithful Pack: https://faithfulpack.net/`.slice(1),
     )
     zip.file(
         "pack.mcmeta",
