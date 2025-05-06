@@ -39,13 +39,15 @@ export async function createPackage() {
     for (const [conflictId, conflict] of Object.entries(data.conflicts)) {
         if (conflict.tweaks.every((tweakId) => tweaks.value.includes(tweakId))) {
             resolved.push(...conflict.tweaks)
-            for (const file of conflict.files) {
-                await addAsset(
-                    zip,
-                    `/conflicts/${conflictId}/${pack.value}/${file}`,
-                    file,
-                )
-            }
+            await Promise.all(
+                conflict.files.map((file) =>
+                    addAsset(
+                        zip,
+                        `/conflicts/${conflictId}/${pack.value}/${file}`,
+                        file,
+                    ),
+                ),
+            )
         }
     }
     for (const tweakId of tweaks.value) {
@@ -53,10 +55,13 @@ export async function createPackage() {
         if (resolved.includes(tweakId)) continue
         resolved.push(tweakId)
         const {files} = data.tweaks[tweakId]
-        for (const file of files) {
-            if (file === "preview.avif") continue
-            await addAsset(zip, `/tweaks/${tweakId}/${pack.value}/${file}`, file)
-        }
+        await Promise.all(
+            files
+                .filter((file) => file !== "preview.avif")
+                .map((file) =>
+                    addAsset(zip, `/tweaks/${tweakId}/${pack.value}/${file}`, file),
+                ),
+        )
     }
     await addAsset(zip, "/LICENSE.txt", "/LICENSE.txt")
     zip.file(
