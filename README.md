@@ -15,7 +15,7 @@
  - [X] Softer Wool
  - [ ] Brown Leather
  - [X] Red Iron Golem Flowers
- - [ ] Rename 'Stem' to 'Log'
+ - [X] Rename 'Stem' to 'Log'
  - [X] Colorful Enchanting Table Particles *(TODO: x64)*
  - [ ] HD Shield Banner Patterns
  - [ ] Warm Glow
@@ -37,7 +37,7 @@
  - [ ] Alternate Cut Copper
  - [ ] Polished Stones to Bricks
  - [ ] Singular Glazed Terracotta
- - [ ] Horizontal World Border
+ - [X] Horizontal World Border
  - [ ] Plain Leather Armor
  - [ ] Golden Crown
  - [ ] Classic Style Netherite Armor
@@ -504,7 +504,7 @@
  - [ ] Classic Minecraft Logo
  - [ ] Dirt Background
  - [ ] Alpha Foliage
- - [ ] Classic Ores
+ - [X] Classic Ores *(TODO: x64, Deepslate Ore)*
  - [ ] Old Cobblestone
  - [ ] Pre-1.18 Stripped Dark Oak
  - [ ] Old Planks
