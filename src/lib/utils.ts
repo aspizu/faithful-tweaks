@@ -20,3 +20,14 @@ export const BASE_URL = import.meta.env.BASE_URL?.slice(0, -1) as string
 export async function sleep(ms: number) {
     return new Promise((resolve) => setTimeout(resolve, ms))
 }
+
+const cache: Record<string, Blob> = {}
+
+export async function cfetch(url: string, options?: RequestInit): Promise<Blob> {
+    if (cache[url]) {
+        return Promise.resolve(cache[url])
+    }
+    const response = await fetch(url, options)
+    cache[url] = await response.blob()
+    return cache[url]
+}

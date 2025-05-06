@@ -3,6 +3,7 @@ import {Button} from "@/components/ui/button"
 import {Switch} from "@/components/ui/switch"
 import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip"
 import {pack, setTweakSelection, tweaks} from "@/lib/state"
+import {cacheTweak} from "@/lib/tweaks/package"
 import {getPackName, Manifest} from "@/lib/tweaks/tweak"
 import {BASE_URL, cn} from "@/lib/utils"
 import {SiDiscord, SiGithub} from "@icons-pack/react-simple-icons"
@@ -105,7 +106,10 @@ export default function Tweak({
                     <Switch
                         disabled={isUnsupported}
                         checked={tweaks.value.includes(id)}
-                        onCheckedChange={setTweakSelection(id)}
+                        onCheckedChange={(value) => {
+                            cacheTweak(id)
+                            setTweakSelection(id)(value)
+                        }}
                     />
                 </div>
                 <img className="mt-auto aspect-[4/3] rounded-sm" src={previewImage} />
