@@ -1,14 +1,22 @@
 import {customOptionsBackgroundTexture, pack, tweaks} from "@/lib/state"
 import {data} from "@/lib/tweaks/tweak"
-import {BASE_URL} from "@/lib/utils"
+import {BASE_URL, cfetch} from "@/lib/utils"
 import {saveAs} from "file-saver"
 import JSZip from "jszip"
 
 const langs: Record<string, Record<string, string>> = {}
 
+export async function cacheTweak(id: string) {
+    if (id.startsWith("custom-")) return
+    await Promise.all(
+        data.tweaks[id].files
+            .filter((file) => file !== "preview.avif")
+            .map((file) => cfetch(file)),
+    )
+}
+
 async function addAsset(zip: JSZip, path: string, name: string) {
-    const response = await fetch(BASE_URL + path)
-    let blob = await response.blob()
+    let blob = await cfetch(BASE_URL + path)
     if (name.startsWith("/assets/minecraft/lang/") && name.endsWith(".json")) {
         if (name in langs) {
             Object.assign(langs[name], await blob.json())

@@ -1,3 +1,4 @@
+import {cacheTweak} from "@/lib/tweaks/package"
 import {customPeaceAndQuiet, data, supported} from "@/lib/tweaks/tweak"
 import {signal} from "@preact/signals-react"
 import {produce} from "immer"
@@ -57,7 +58,7 @@ export function createShareURL() {
     return url.toString()
 }
 
-export function loadShareURL() {
+export async function loadShareURL() {
     const url = new URL(window.location.href)
     const share = url.searchParams.get("share")
     if (!share) return
@@ -79,4 +80,5 @@ export function loadShareURL() {
     customPeaceAndQuietSelection.value = Object.fromEntries(
         shared.cpnq.map((key) => [key, true]),
     )
+    await Promise.all(tweaks.value.map(cacheTweak))
 }
