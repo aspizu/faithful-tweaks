@@ -1,0 +1,10 @@
+{
+    "index": 0,
+    "title": "Classic Ores",
+    "description": "Reverts all ores to their pre-1.17 textures, however Deepslate ores aren't done yet.",
+    "author": {
+        "name": "webaccount284",
+        "discord": "webaccount284"
+    },
+    "category": "retro"
+}
