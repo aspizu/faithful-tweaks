@@ -4,9 +4,21 @@ import {BASE_URL} from "@/lib/utils"
 import {saveAs} from "file-saver"
 import JSZip from "jszip"
 
+const langs: Record<string, Record<string, string>> = {}
+
 async function addAsset(zip: JSZip, path: string, name: string) {
     const response = await fetch(BASE_URL + path)
-    const blob = await response.blob()
+    let blob = await response.blob()
+    if (name.startsWith("/assets/minecraft/lang/") && name.endsWith(".json")) {
+        if (name in langs) {
+            Object.assign(langs[name], await blob.json())
+            blob = new Blob([JSON.stringify(langs[name], null, 2)], {
+                type: "application/json",
+            })
+        } else {
+            langs[name] = await blob.json()
+        }
+    }
     zip.file(name, blob)
 }
 
