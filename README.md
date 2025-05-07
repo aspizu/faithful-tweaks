@@ -528,9 +528,9 @@
  - [ ] Kinda Classic Sheep
  - [ ] Poppy to Rose
  - [X] Bed Icons
- - [ ] Rename 'Terracotta' to 'Hardened Clay'
- - [ ] Rename 'Dirt Path' to 'Grass Path'
- - [ ] Rename 'Pottery Sherd' to 'Pottery Shard'
+ - [X] Rename 'Terracotta' to 'Hardened Clay'
+ - [X] Rename 'Dirt Path' to 'Grass Path'
+ - [X] Rename 'Pottery Sherd' to 'Pottery Shard'
  - [ ] Blue Widgets Highlight
  - [ ] Old Enchantment Glint
  - [ ] Zombie Pigman
