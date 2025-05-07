@@ -1,6 +1,7 @@
+import {cfetch} from "@/lib/cfetch"
 import {customOptionsBackgroundTexture, pack, tweaks} from "@/lib/state"
 import {data} from "@/lib/tweaks/tweak"
-import {BASE_URL, cfetch} from "@/lib/utils"
+import {BASE_URL} from "@/lib/utils"
 import {saveAs} from "file-saver"
 import JSZip from "jszip"
 
