@@ -36,9 +36,7 @@ argparser.add_argument(
     "--description", type=str, default="", help="Short description of the tweak"
 )
 argparser.add_argument("--author", type=str, default="aspizu", help="Author's name")
-argparser.add_argument(
-    "--github", type=str, default="aspizu", help="Author's GitHub handle (optional)"
-)
+argparser.add_argument("--github", type=str, help="Author's GitHub handle (optional)")
 argparser.add_argument("--discord", type=str, help="Author's Discord (optional)")
 argparser.add_argument("--email", type=str, help="Author's email (optional)")
 argparser.add_argument("--link", type=str, help="Author's link (optional)")
@@ -47,6 +45,11 @@ argparser.add_argument("--new", action="store_true", help="Mark this tweak as ne
 args = argparser.parse_args()
 
 title = args.title or generate_title_from_id(args.id)
+
+if args.author == "aspizu":
+    args.github = "aspizu"
+elif args.author == "Stridey":
+    args.link = "https://vanillatweaks.net/"
 
 author = {"name": args.author}
 if args.github:
