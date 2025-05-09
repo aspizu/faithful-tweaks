@@ -75,3 +75,7 @@
 ::-webkit-scrollbar-thumb {
     @apply bg-border rounded-full border-[1px] border-solid border-transparent bg-clip-padding;
 }
+
+@theme {
+    --font-sans: "Inter Variable", sans-serif;
+}

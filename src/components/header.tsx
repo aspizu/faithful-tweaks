@@ -7,11 +7,12 @@ import {SidebarTrigger} from "@/components/ui/sidebar"
 import {Spinner} from "@/components/ui/spinner"
 import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip"
 import {search} from "@/lib/state"
-import {createPackage} from "@/lib/tweaks/package"
+import {Packager} from "@/lib/tweaks/packager"
 import {BASE_URL, cn} from "@/lib/utils"
 import {SiGithub} from "@icons-pack/react-simple-icons"
 import {batch, useSignal} from "@preact/signals-react"
 import {useWindowScroll} from "@uidotdev/usehooks"
+import {saveAs} from "file-saver"
 import {DownloadIcon, SettingsIcon, Share2Icon} from "lucide-react"
 
 function HeaderStart() {
@@ -19,9 +20,10 @@ function HeaderStart() {
         <div className="flex items-center gap-2 justify-self-start">
             <SidebarTrigger className="mr-auto" />
             <img
-                srcSet={`${BASE_URL}/title_1x.png 1x, ${BASE_URL}/title_2x.png 2x`}
-                className="justify-self-center"
-                alt="Faithful Tweaks"
+                srcSet={`${BASE_URL}/minecraft_title.png`}
+                className="overlapping-grid-layer h-8 justify-self-center"
+                alt="Faithful Tweaks (Unofficial) logo"
+                title="Faithful Tweaks (Unofficial)"
             />
         </div>
     )
@@ -34,6 +36,9 @@ function HeaderCenter() {
             onChange={(ev) => {
                 search.value = ev.target.value
             }}
+            onClear={() => {
+                search.value = ""
+            }}
         />
     )
 }
@@ -43,7 +48,10 @@ function HeaderEnd() {
     async function onDownload() {
         if (isDownloading.value) return
         isDownloading.value = true
-        await createPackage()
+        const packager = new Packager()
+        await packager.package()
+        const blob = await packager.zip.generateAsync({type: "blob"})
+        saveAs(blob, "faithful-tweaks.zip")
         batch(() => {
             isDownloading.value = false
             isDownloadDialogOpen.value = true

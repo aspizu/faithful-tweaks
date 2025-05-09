@@ -13,12 +13,11 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
-import {pack, tweaks} from "@/lib/state"
-import {data, supported} from "@/lib/tweaks/tweak"
-import {plural, setSignal} from "@/lib/utils"
+import {selectedPack} from "@/lib/state"
+import {packs} from "@/lib/tweaks/tweak"
+import {setSignal} from "@/lib/utils"
 import {signal} from "@preact/signals-react"
 import {useId} from "react"
-import {toast} from "sonner"
 
 export const isSettingsDialogOpen = signal(false)
 
@@ -38,36 +37,16 @@ export default function SettingsDialog() {
                 </DialogHeader>
                 <Label htmlFor={id}>Pack</Label>
                 <Select
-                    value={pack.value}
-                    onValueChange={(value) => {
-                        const removed = []
-                        tweaks.value = tweaks.value.filter((tweak) => {
-                            if (tweak.startsWith("custom-")) return true
-                            if (data.tweaks[tweak].manifest.supported.includes(value)) {
-                                return true
-                            }
-                            removed.push(tweak)
-                            return false
-                        })
-                        pack.value = value
-                        if (removed.length > 0) {
-                            toast(
-                                `Removed ${removed.length} unsupported ${plural(
-                                    removed.length,
-                                    "tweak",
-                                    "tweaks",
-                                )} from your selection.`,
-                            )
-                        }
-                    }}
+                    value={selectedPack.value}
+                    onValueChange={setSignal(selectedPack)} // TODO: Remove unsupported tweaks
                 >
                     <SelectTrigger id={id} className="w-full">
                         <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                        {supported.map((pack) => (
-                            <SelectItem key={pack.id} value={pack.id}>
-                                {pack.name}
+                        {Object.entries(packs).map(([id, {name}]) => (
+                            <SelectItem key={id} value={id}>
+                                {name}
                             </SelectItem>
                         ))}
                     </SelectContent>

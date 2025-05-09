@@ -6,6 +6,8 @@ import {loadShareURL} from "@/lib/state"
 import {enableMapSet} from "immer"
 import {StrictMode} from "react"
 import {createRoot} from "react-dom/client"
+// @ts-ignore
+import "@fontsource-variable/inter"
 
 enableMapSet()
 

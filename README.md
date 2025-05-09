@@ -690,3 +690,90 @@ Can be implemented using the `conflicts` feature:
  - **GUI** > **Panorama** (Select panorama)
  - **GUI** > **Options** background (Select block texture to use as options background)
  - **Peace & Quiet**
+
+# Development
+
+## Creating a Tweak
+
+Run the following command to create a tweak entry:
+
+```
+python tool.py --id my_tweak --category visuals --title "My Tweak" --description "Short description" --author "Author Name"
+```
+
+Place tweak files in:
+
+```
+./public/tweaks/<tweak-id>/x32/
+./public/tweaks/<tweak-id>/x64/
+```
+
+Each folder must include:
+
+* Minecraft resource pack content
+* `preview.avif` (640×480)
+
+#### Metadata
+
+Edit `tweak.json`:
+
+* Add metadata for each tweak
+* Ensure the `index` field is unique
+
+Use `--new` flag to mark the tweak as new. Optional author info includes GitHub, Discord, email, and link.
+
+## Creating a Custom Tweak
+
+To add a new custom tweak to your project, follow the steps below. This guide ensures consistency and clarity across all custom tweaks.
+
+### 1. Create the Tweak File
+
+* **Location**: Place your new file in the `./src/lib/tweaks/custom-tweaks/` directory.
+* **Filename**: Use the tweak's ID in kebab-case (e.g., `my-custom-tweak.tsx`).
+
+### 2. Define the Tweak Module
+
+Here's a template to help you get started:
+
+```tsx
+import CustomTweak from "@/components/custom-tweak";
+import type {Manifest} from "@/lib/tweaks/custom-tweak";
+
+/* Define your custom state here */
+const state = signal("example");
+
+/* Metadata about the tweak */
+export const manifest: Manifest = {
+  id: "my-custom-tweak",
+  title: "My Custom Tweak",
+  description: "A brief description of what this tweak does.",
+  author: { name: "Your Name" },
+  category: "category-name",
+  isNew: true, // Highlight as 'new' in the UI
+  packsSupported: ["x32", "x64"], // Supported resource pack formats
+};
+
+/* Custom GUI controls */
+export function Component() {
+  return (
+    <CustomTweak id="my-custom-tweak">
+      {/* Your custom UI elements go here */}
+    </CustomTweak>
+  );
+}
+
+/* Logic to add files to the resource pack */
+export async function logic(packager: Packager) {
+  // Implement your custom logic here
+}
+
+/* Add state information to the share URL as query parameters */
+export function createShareURL(url: URL) {
+  // Serialize state to URL parameters
+}
+
+/* Load state information from the share URL */
+export function loadShareURL(url: URL) {
+  // Deserialize state from URL parameters
+}
+```

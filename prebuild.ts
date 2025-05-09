@@ -1,6 +1,8 @@
+/* eslint-disable ban-relative-imports/ban-relative-imports */
 import Bun from "bun"
 import fs from "fs/promises"
 import path from "path"
+import type {Tweak} from "./src/lib/tweaks/tweak.ts"
 
 async function listDirectories(basePath: string): Promise<string[]> {
     const entries = await fs.readdir(basePath)
@@ -13,10 +15,8 @@ async function listDirectories(basePath: string): Promise<string[]> {
     return dirs.filter(Boolean) as string[]
 }
 
-const data = {
-    tweaks: {},
-    conflicts: {},
-}
+const tweaks: Record<string, Tweak> = {}
+const conflicts: {id: string; tweaks: string[]; files: string[]}[] = []
 
 const tweakDirectories = await listDirectories(
     path.join(process.cwd(), "public/tweaks"),
@@ -24,19 +24,26 @@ const tweakDirectories = await listDirectories(
 
 for (const tweakDirectory of tweakDirectories) {
     const manifest = await Bun.file(path.join(tweakDirectory, "tweak.json")).json()
-    const supported = (await listDirectories(tweakDirectory)).map((directory) =>
+    const packsSupported = (await listDirectories(tweakDirectory)).map((directory) =>
         path.relative(tweakDirectory, directory),
     )
-    const files = await Array.fromAsync(
-        new Bun.Glob("**/*").scan({cwd: path.join(tweakDirectory, supported[0])}),
-    )
-    data.tweaks[path.basename(tweakDirectory)] = {
+    const files = (
+        await Array.fromAsync(
+            new Bun.Glob("**/*").scan({
+                cwd: path.join(tweakDirectory, packsSupported[0]),
+            }),
+        )
+    ).filter((file) => file !== "preview.avif")
+    tweaks[path.basename(tweakDirectory)] = {
+        index: manifest.index,
+        id: path.basename(tweakDirectory),
+        category: manifest.category,
+        title: manifest.title,
+        description: manifest.description,
+        author: manifest.author,
+        isNew: manifest.new ?? false,
         files: files.map((file) => file.replaceAll("\\", "/")),
-        manifest: {
-            id: path.basename(tweakDirectory),
-            ...manifest,
-            supported,
-        },
+        packsSupported: packsSupported as any,
     }
 }
 
@@ -46,16 +53,19 @@ const conflictDirectories = await listDirectories(
 
 for (const conflictDirectory of conflictDirectories) {
     const tweakList = path.basename(conflictDirectory).split("+")
-    tweakList.sort()
-    const conflictHash = tweakList.join("+")
-    data.conflicts[conflictHash] = {
+    conflicts.push({
+        id: path.basename(conflictDirectory),
         tweaks: tweakList,
         files: await Array.fromAsync(
             new Bun.Glob("**/*").scan({cwd: conflictDirectory}),
         ),
-    }
+    })
 }
 
-await Bun.file(path.join(process.cwd(), "src/assets/data.json")).write(
-    JSON.stringify(data),
+await Bun.file(path.join(process.cwd(), "src/assets/tweaks.json")).write(
+    JSON.stringify(tweaks),
+)
+
+await Bun.file(path.join(process.cwd(), "src/assets/conflicts.json")).write(
+    JSON.stringify(conflicts),
 )

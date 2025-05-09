@@ -1,3 +1,4 @@
-src/assets/data.json
+src/assets/tweaks.json
+src/assets/conflicts.json
 node_modules
 dist

@@ -8,6 +8,7 @@
         "build": "bun run prebuild.ts && vite build --base=/faithful-tweaks/"
     },
     "dependencies": {
+        "@fontsource-variable/inter": "^5.2.5",
         "@hookform/resolvers": "^5.0.1",
         "@icons-pack/react-simple-icons": "^12.7.0",
         "@preact/signals-react": "^3.0.1",

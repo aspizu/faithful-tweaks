@@ -1,17 +1,16 @@
+import TweakAuthor from "@/components/tweak-author"
 import {Switch} from "@/components/ui/switch"
-import {setTweakSelection, tweaks} from "@/lib/state"
-import {customTweaks} from "@/lib/tweaks/tweak"
+import {selectedTweaks, setTweakSelection} from "@/lib/state"
+import {customTweaks} from "@/lib/tweaks/custom-tweak"
 
 export interface CustomTweakProps {
-    id: `custom-${string}`
+    id: keyof typeof customTweaks
     children?: any
     onCheckedChange?: (value: boolean) => void
 }
 
 export default function CustomTweak({id, children, onCheckedChange}: CustomTweakProps) {
-    const {
-        manifest: {title, description},
-    } = customTweaks[id]
+    const {title, description, author} = customTweaks[id].manifest
     return (
         <div className="overlapping-grid-layer flex h-full w-full flex-col gap-2 rounded-xl border bg-transparent p-2">
             <div className="flex">
@@ -19,15 +18,14 @@ export default function CustomTweak({id, children, onCheckedChange}: CustomTweak
                     <span className="font-semibold">{title}</span>
                     <span
                         className="text-muted-foreground text-xs"
-                        dangerouslySetInnerHTML={{
-                            __html: description,
-                        }}
-                    ></span>
+                        dangerouslySetInnerHTML={{__html: description}}
+                    />
+                    <TweakAuthor {...author} />
                 </div>
                 <Switch
-                    checked={tweaks.value.includes(id)}
+                    checked={selectedTweaks.value.includes(id)}
                     onCheckedChange={(value) => {
-                        setTweakSelection(id)(value)
+                        setTweakSelection(id, value)
                         onCheckedChange?.(value)
                     }}
                 />

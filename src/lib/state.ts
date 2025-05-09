@@ -1,84 +1,84 @@
-import {cacheTweak} from "@/lib/tweaks/package"
-import {customPeaceAndQuiet, data, supported} from "@/lib/tweaks/tweak"
+import {customTweaks} from "@/lib/tweaks/custom-tweak"
+import {tweaks, type PackID, type TweakID} from "@/lib/tweaks/tweak"
 import {signal} from "@preact/signals-react"
 import {produce} from "immer"
 
-export const pack = signal<string>(supported[0].id)
+export const selectedPack = signal<PackID>("x32")
 
-export const tweaks = signal<string[]>([])
+export const selectedTweaks = signal<TweakID[]>([])
 
 export const search = signal<string>("")
 
-export const customOptionsBackgroundTexture = signal<string | null>(null)
-
-export const customPeaceAndQuietSelection = signal<{
-    [K in keyof typeof customPeaceAndQuiet]?: boolean
-}>({})
-
-export function setTweakSelection(id: string) {
-    return (value: boolean) => {
-        tweaks.value = produce(tweaks.value, (tweaks) => {
-            const index = tweaks.indexOf(id)
-            if (value) {
-                if (index === -1) {
-                    tweaks.push(id)
-                }
-            } else {
-                if (index !== -1) {
-                    tweaks.splice(index, 1)
-                }
+export function setTweakSelection(id: TweakID, value: boolean) {
+    selectedTweaks.value = produce(selectedTweaks.value, (tweaks) => {
+        const index = tweaks.indexOf(id)
+        if (value) {
+            if (index === -1) {
+                tweaks.push(id)
             }
-            tweaks.sort()
-        })
-    }
+        } else {
+            if (index !== -1) {
+                tweaks.splice(index, 1)
+            }
+        }
+        tweaks.sort()
+    })
 }
 
-interface Share {
-    pack: string
-    tweaks: number[]
-    cobt: string | null
-    cpnq: string[]
+const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_"
+
+function encodeIndex(index: number): string {
+    const place0 = index % chars.length
+    const place1 = Math.floor(index / chars.length) % chars.length
+    return chars[place1] + chars[place0]
+}
+
+function decodeIndex(encoded: string): number {
+    const place0 = chars.indexOf(encoded[1])
+    const place1 = chars.indexOf(encoded[0])
+    return place0 + place1 * chars.length
+}
+
+function encodeSelectedTweaks(): string {
+    return selectedTweaks.value
+        .map((tweak) => (tweaks[tweak] ? encodeIndex(tweaks[tweak].index) : null))
+        .filter(Boolean)
+        .join("")
+}
+
+function decodeSelectedTweaks(encoded: string): TweakID[] {
+    const selectedTweaks: TweakID[] = []
+    for (let i = 0; i < encoded.length; i += 2) {
+        const index = decodeIndex(encoded.slice(i, i + 2))
+        const tweakID = Object.values(tweaks).find((tweak) => tweak.index === index)
+        if (tweakID) {
+            selectedTweaks.push(tweakID.id)
+        }
+    }
+    return selectedTweaks
 }
 
 export function createShareURL() {
     const url = new URL(window.location.href)
-    url.searchParams.set(
-        "share",
-        JSON.stringify({
-            pack: pack.value,
-            tweaks: tweaks.value
-                .filter((tweak) => !tweak.startsWith("custom-"))
-                .map((tweak) => data.tweaks[tweak].manifest.index),
-            cobt: customOptionsBackgroundTexture.value,
-            cpnq: Object.entries(customPeaceAndQuietSelection.value)
-                .filter(([_, value]) => value)
-                .map(([key]) => key),
-        } satisfies Share),
-    )
+    url.searchParams.set("pack", selectedPack.value)
+    url.searchParams.set("tweaks", encodeSelectedTweaks())
+    for (const {createShareURL} of Object.values(customTweaks)) {
+        createShareURL(url)
+    }
     return url.toString()
 }
 
-export async function loadShareURL() {
+export function loadShareURL() {
     const url = new URL(window.location.href)
-    const share = url.searchParams.get("share")
-    if (!share) return
-    const shared = JSON.parse(share) as Share
-    pack.value = shared.pack
-    const newtweaks = shared.tweaks.map(
-        (index: number) =>
-            Object.values(data.tweaks).find((tweak) => tweak.manifest.index === index)!
-                .manifest.id,
-    )
-    if (shared.cobt) {
-        newtweaks.push("custom-options-background")
+    const pack = url.searchParams.get("pack")
+    const tweaks = url.searchParams.get("tweaks")
+    if (pack) {
+        selectedPack.value = pack as PackID
     }
-    if (shared.cpnq.length > 0) {
-        newtweaks.push("custom-peace-and-quiet")
+    if (tweaks) {
+        selectedTweaks.value = decodeSelectedTweaks(tweaks)
     }
-    tweaks.value = newtweaks
-    customOptionsBackgroundTexture.value = shared.cobt
-    customPeaceAndQuietSelection.value = Object.fromEntries(
-        shared.cpnq.map((key) => [key, true]),
-    )
-    await Promise.all(tweaks.value.map(cacheTweak))
+    for (const {loadShareURL} of Object.values(customTweaks)) {
+        loadShareURL(url)
+    }
 }
