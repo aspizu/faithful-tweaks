@@ -23,6 +23,7 @@ export function BaseShareDialog({
     onOpenChange,
     title,
     description,
+    children,
 }: BaseShareDialogProps) {
     const shareURL = createShareURL()
 
@@ -30,8 +31,8 @@ export function BaseShareDialog({
         try {
             if (navigator.share) {
                 await navigator.share({
-                    title: "Faithful Tweaks Resource Pack",
-                    text: "Check out this awesome resource pack generator!",
+                    title: "Faithful Tweaks (Unofficial)",
+                    text: "Create your own Minecraft resource pack using Faithful Tweaks.",
                     url: shareURL,
                 })
             } else {
@@ -62,6 +63,7 @@ export function BaseShareDialog({
                         className="cursor-pointer"
                     />
                 </Label>
+                {children}
             </DialogContent>
         </Dialog>
     )
