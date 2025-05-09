@@ -11,6 +11,7 @@ export default function ShareDialog() {
             onOpenChange={setSignal(isShareDialogOpen)}
             title="Share Your Faithful Tweaks Pack"
             description="Share your selected tweaks and configuration with your friends!"
+            utmCampaign="share"
         />
     )
 }

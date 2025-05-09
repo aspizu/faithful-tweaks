@@ -58,10 +58,13 @@ function decodeSelectedTweaks(encoded: string): TweakID[] {
     return selectedTweaks
 }
 
-export function createShareURL() {
+export function createShareURL({utmCampaign}: {utmCampaign: string}): string {
     const url = new URL(window.location.href)
     url.searchParams.set("pack", selectedPack.value)
     url.searchParams.set("tweaks", encodeSelectedTweaks())
+    if (utmCampaign) {
+        url.searchParams.set("utm_campaign", utmCampaign)
+    }
     for (const {createShareURL} of Object.values(customTweaks)) {
         createShareURL(url)
     }

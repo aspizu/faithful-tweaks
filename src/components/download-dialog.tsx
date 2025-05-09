@@ -11,6 +11,7 @@ export default function DownloadDialog() {
             onOpenChange={setSignal(isDownloadDialogOpen)}
             title="Download Faithful Tweaks"
             description="Thank you for downloading Faithful Tweaks! Before you leave, consider sharing with your friends."
+            utmCampaign="download"
         />
     )
 }

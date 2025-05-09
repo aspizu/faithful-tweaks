@@ -15,6 +15,7 @@ interface BaseShareDialogProps {
     onOpenChange: (open: boolean) => void
     title: string
     description: string
+    utmCampaign: string
     children?: React.ReactNode
 }
 
@@ -23,9 +24,10 @@ export function BaseShareDialog({
     onOpenChange,
     title,
     description,
+    utmCampaign,
     children,
 }: BaseShareDialogProps) {
-    const shareURL = createShareURL()
+    const shareURL = createShareURL({utmCampaign})
 
     async function handleShare() {
         try {
