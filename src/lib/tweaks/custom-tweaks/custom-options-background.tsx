@@ -135,7 +135,7 @@ export function Component() {
 
 function TextureButton({texture}: {texture: string}) {
     const isSelected =
-        selectedTweaks.value.includes("custom-options-background")
+        selectedTweaks.value.has("custom-options-background")
         && selectedTexture.value === texture
     return (
         <button
@@ -169,7 +169,7 @@ export async function logic(packager: Packager) {
 
 export function createShareURL(url: URL) {
     if (
-        selectedTweaks.value.includes("custom-options-background")
+        selectedTweaks.value.has("custom-options-background")
         && selectedTexture.value
     ) {
         url.searchParams.set("o", selectedTexture.value)

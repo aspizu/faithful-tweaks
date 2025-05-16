@@ -45,7 +45,7 @@ export default function Tweak({id, title, description, packsSupported, author}: 
                     </div>
                     <Switch
                         disabled={isUnsupported}
-                        checked={selectedTweaks.value.includes(id)}
+                        checked={selectedTweaks.value.has(id)}
                         onCheckedChange={(value) => {
                             cacheTweak(id)
                             setTweakSelection(id, value)

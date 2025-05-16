@@ -15,22 +15,25 @@ import {customTweaks, isTweakCustom} from "@/lib/tweaks/custom-tweak"
 import {XIcon} from "lucide-react"
 
 function SelectedTweaksMenu() {
-    return selectedTweaks.value.map((tweak) => (
-        <SidebarMenuItem key={tweak}>
-            <SidebarMenuButton>
-                {isTweakCustom(tweak) ?
-                    customTweaks[tweak].manifest.title
-                :   tweaks[tweak].title}
-            </SidebarMenuButton>
-            <SidebarMenuAction
-                onClick={() => {
-                    setTweakSelection(tweak, false)
-                }}
-            >
-                <XIcon />
-            </SidebarMenuAction>
-        </SidebarMenuItem>
-    ))
+    return selectedTweaks.value
+        .values()
+        .map((tweak) => (
+            <SidebarMenuItem key={tweak}>
+                <SidebarMenuButton>
+                    {isTweakCustom(tweak) ?
+                        customTweaks[tweak].manifest.title
+                    :   tweaks[tweak].title}
+                </SidebarMenuButton>
+                <SidebarMenuAction
+                    onClick={() => {
+                        setTweakSelection(tweak, false)
+                    }}
+                >
+                    <XIcon />
+                </SidebarMenuAction>
+            </SidebarMenuItem>
+        ))
+        .toArray()
 }
 
 export function AppSidebar() {
