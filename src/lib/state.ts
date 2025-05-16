@@ -1,4 +1,4 @@
-import {tweaks, type PackID, type TweakID} from "@/lib/tweaks/tweak"
+import {manifests, type PackID, type TweakID} from "@/lib/tweaks/tweak"
 import {signal} from "@preact/signals-react"
 
 export const selectedPack = signal<PackID>("x32")
@@ -18,14 +18,12 @@ export function setTweakSelection(id: TweakID, value: boolean) {
 }
 
 export function setCategorySelection(category: string, value: boolean) {
-    const ids = Object.values(tweaks)
-        .filter((t) => t.category === category)
-        .map((t) => t.id)
+    const ids = manifests.filter((t) => t.category === category).map((t) => t.id)
     updateSelections(ids, value)
 }
 
 export function isCategorySelected(category: string) {
-    return Object.values(tweaks)
+    return manifests
         .filter((t) => t.category === category)
         .every((t) => selectedTweaks.value.has(t.id))
 }
