@@ -56,7 +56,7 @@ export default function Gallery() {
                     <AccordionItem key={category} value={category} className="relative">
                         <SelectAllButton category={category} />
                         <AccordionTrigger>{titleCase(category)}</AccordionTrigger>
-                        <AccordionContent className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-2">
+                        <AccordionContent className="grid grid-cols-[repeat(auto-fit,minmax(19rem,1fr))] gap-2">
                             {tweaks!.map((tweak) => {
                                 if (isTweakCustom(tweak.id)) {
                                     const {Component} = customTweaks[tweak.id]
