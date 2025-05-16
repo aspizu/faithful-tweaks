@@ -269,7 +269,7 @@
  - [ ] Numbered Hotbar
  - [ ] Smoother Font
  - [ ] Hotbar-Style Inventory Slot Highlight
- - [ ] No Java Edition Subtitle
+ - [X] No Java Edition Subtitle
  - [ ] Clearer Wither Hearts
  - [ ] Colored Ping Indicator
  - [ ] Rainbow Experience Bar
