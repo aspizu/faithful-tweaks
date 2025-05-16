@@ -18,7 +18,9 @@ function SelectedTweaksMenu() {
         .filter(({id}) => selectedTweaks.value.has(id))
         .map(({id, title}) => (
             <SidebarMenuItem key={id}>
-                <SidebarMenuButton title={title}>{title}</SidebarMenuButton>
+                <SidebarMenuButton title={title}>
+                    <span className="truncate">{title}</span>
+                </SidebarMenuButton>
                 <SidebarMenuAction
                     onClick={() => {
                         setTweakSelection(id, false)
