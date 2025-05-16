@@ -3,9 +3,6 @@
     "id": "no-java-edition-subtitle",
     "title": "No Java Edition Subtitle",
     "description": "Removes the 'Java Edition' subtitle from the Minecraft logo.",
-    "author": {
-        "name": "Stridey",
-        "link": "https://vanillatweaks.net/"
-    },
+    "author": {"name": "Vanilla Tweaks", "link": "https://vanillatweaks.net/"},
     "category": "gui"
 }

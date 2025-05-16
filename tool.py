@@ -48,7 +48,7 @@ title = args.title or generate_title_from_id(args.id)
 
 if args.author == "aspizu":
     args.github = "aspizu"
-elif args.author == "Stridey":
+elif args.author == "Vanilla Tweaks":
     args.link = "https://vanillatweaks.net/"
 
 author = {"name": args.author}

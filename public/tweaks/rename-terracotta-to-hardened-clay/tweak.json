@@ -3,9 +3,6 @@
     "id": "rename-terracotta-to-hardened-clay",
     "title": "Rename Terracotta To Hardened Clay",
     "description": "",
-    "author": {
-        "name": "Stridey",
-        "link": "https://vanillatweaks.net/"
-    },
+    "author": {"name": "Vanilla Tweaks", "link": "https://vanillatweaks.net/"},
     "category": "retro"
 }

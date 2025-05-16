@@ -3,9 +3,6 @@
     "id": "rename-pottery-sherd-to-pottery-shard",
     "title": "Rename Pottery Sherd To Pottery Shard",
     "description": "",
-    "author": {
-        "name": "Stridey",
-        "link": "https://vanillatweaks.net/"
-    },
+    "author": {"name": "Vanilla Tweaks", "link": "https://vanillatweaks.net/"},
     "category": "retro"
 }
