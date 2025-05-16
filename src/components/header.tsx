@@ -18,7 +18,7 @@ import {DownloadIcon, SettingsIcon, Share2Icon} from "lucide-react"
 function HeaderStart() {
     return (
         <div className="flex items-center gap-2 justify-self-start">
-            <SidebarTrigger className="mr-auto" />
+            <SidebarTrigger />
             <img
                 srcSet={`${BASE_URL}/minecraft_title.png`}
                 className="overlapping-grid-layer h-8 justify-self-center"
