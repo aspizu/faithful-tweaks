@@ -23,7 +23,7 @@ export default function CustomTweak({id, children, onCheckedChange}: CustomTweak
                     <TweakAuthor {...author} />
                 </div>
                 <Switch
-                    checked={selectedTweaks.value.includes(id)}
+                    checked={selectedTweaks.value.has(id)}
                     onCheckedChange={(value) => {
                         setTweakSelection(id, value)
                         onCheckedChange?.(value)
