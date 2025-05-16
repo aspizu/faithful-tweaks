@@ -15,7 +15,15 @@ import {useWindowScroll} from "@uidotdev/usehooks"
 import {saveAs} from "file-saver"
 import {DownloadIcon, SettingsIcon, Share2Icon} from "lucide-react"
 
-const splashTexts = ["Zoglin!?", "Unofficial", "Star Us", "Follow Us"]
+const splashTexts = [
+    "As seen on TV!",
+    "May contain nuts!",
+    "Indev!",
+    "Made in India!",
+    "Open source!",
+    "...!",
+    "Made by aspizu!",
+]
 const randomSplashText = splashTexts[Math.floor(Math.random() * splashTexts.length)]
 
 function HeaderStart() {
