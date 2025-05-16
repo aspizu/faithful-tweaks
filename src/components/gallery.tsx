@@ -7,15 +7,22 @@ import {
 } from "@/components/ui/accordion"
 import {Button} from "@/components/ui/button"
 import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip"
-import {isCategorySelected, search, setCategorySelection} from "@/lib/state"
+import {
+    isCategorySelected,
+    search,
+    selectedTweaks,
+    setCategorySelection,
+} from "@/lib/state"
 import {customTweaks, isTweakCustom} from "@/lib/tweaks/custom-tweak"
 import {categories, tweaks} from "@/lib/tweaks/tweak"
 import {titleCase} from "@/lib/utils"
 import {CheckCheckIcon} from "lucide-react"
 
 function SelectAllButton({category}: {category: string}) {
+    void selectedTweaks.value // signals hack
+    const isSelected = isCategorySelected(category)
     function onSelectAll() {
-        setCategorySelection(category, !isCategorySelected(category))
+        setCategorySelection(category, !isSelected)
     }
     return (
         <Tooltip>
@@ -29,7 +36,9 @@ function SelectAllButton({category}: {category: string}) {
                     <CheckCheckIcon />
                 </Button>
             </TooltipTrigger>
-            <TooltipContent>Select All</TooltipContent>
+            <TooltipContent>
+                {isSelected ? "Deselect All" : "Select All"}
+            </TooltipContent>
         </Tooltip>
     )
 }
