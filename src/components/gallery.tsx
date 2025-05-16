@@ -7,24 +7,15 @@ import {
 } from "@/components/ui/accordion"
 import {Button} from "@/components/ui/button"
 import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip"
-import {search, setTweakSelection} from "@/lib/state"
+import {isCategorySelected, search, setCategorySelection} from "@/lib/state"
 import {customTweaks, isTweakCustom} from "@/lib/tweaks/custom-tweak"
 import {categories, tweaks} from "@/lib/tweaks/tweak"
 import {titleCase} from "@/lib/utils"
-import {batch} from "@preact/signals-react"
 import {CheckCheckIcon} from "lucide-react"
 
 function SelectAllButton({category}: {category: string}) {
     function onSelectAll() {
-        batch(() => {
-            for (const tweak of Object.values(tweaks).concat(
-                Object.values(customTweaks).map((tweak) => tweak.manifest) as any,
-            )) {
-                if (tweak.category === category) {
-                    setTweakSelection(tweak.id, true)
-                }
-            }
-        })
+        setCategorySelection(category, !isCategorySelected(category))
     }
     return (
         <Tooltip>

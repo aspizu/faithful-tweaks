@@ -23,3 +23,9 @@ export function setCategorySelection(category: string, value: boolean) {
         .map((t) => t.id)
     updateSelections(ids, value)
 }
+
+export function isCategorySelected(category: string) {
+    return Object.values(tweaks)
+        .filter((t) => t.category === category)
+        .every((t) => selectedTweaks.value.has(t.id))
+}
