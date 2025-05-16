@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/dialog"
 import {Input} from "@/components/ui/input"
 import {Label} from "@/components/ui/label"
-import {createShareURL} from "@/lib/state"
+import {createShareURL} from "@/lib/share"
 import {toast} from "sonner"
 
 interface BaseShareDialogProps {
