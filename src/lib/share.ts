@@ -18,18 +18,20 @@ function decodeIndex(encoded: string): number {
 
 function encodeSelectedTweaks(): string {
     return selectedTweaks.value
+        .values()
         .map((tweak) => (tweaks[tweak] ? encodeIndex(tweaks[tweak].index) : null))
         .filter(Boolean)
+        .toArray()
         .join("")
 }
 
-function decodeSelectedTweaks(encoded: string): TweakID[] {
-    const selectedTweaks: TweakID[] = []
+function decodeSelectedTweaks(encoded: string): Set<TweakID> {
+    const selectedTweaks: Set<TweakID> = new Set()
     for (let i = 0; i < encoded.length; i += 2) {
         const index = decodeIndex(encoded.slice(i, i + 2))
         const tweakID = Object.values(tweaks).find((tweak) => tweak.index === index)
         if (tweakID) {
-            selectedTweaks.push(tweakID.id)
+            selectedTweaks.add(tweakID.id)
         }
     }
     return selectedTweaks
