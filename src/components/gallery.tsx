@@ -1,4 +1,4 @@
-import Tweak from "@/components/tweak"
+import TweakComponent from "@/components/tweak"
 import {
     Accordion,
     AccordionContent,
@@ -14,7 +14,7 @@ import {
     setCategorySelection,
 } from "@/lib/state"
 import {customTweaks, isTweakCustom} from "@/lib/tweaks/custom-tweak"
-import {categories, tweaks} from "@/lib/tweaks/tweak"
+import {categories, manifests, type Tweak} from "@/lib/tweaks/tweak"
 import {titleCase} from "@/lib/utils"
 import {CheckCheckIcon} from "lucide-react"
 
@@ -45,9 +45,9 @@ function SelectAllButton({category}: {category: string}) {
 
 export default function Gallery() {
     const query = search.value.trim().toLowerCase()
-    const filtered = Object.values(tweaks)
-        .concat(Object.values(customTweaks).map((tweak) => tweak.manifest) as any)
-        .filter((tweak) => tweak.title.toLowerCase().includes(query))
+    const filtered = manifests.filter((tweak) =>
+        tweak.title.toLowerCase().includes(query),
+    )
     const categorized = Object.groupBy(filtered, (tweak) => tweak.category)
     return (
         <div className="flex grow flex-col gap-2 p-2 pt-0">
@@ -62,7 +62,12 @@ export default function Gallery() {
                                     const {Component} = customTweaks[tweak.id]
                                     return <Component key={tweak.id} />
                                 }
-                                return <Tweak key={tweak.id} {...tweak} />
+                                return (
+                                    <TweakComponent
+                                        key={tweak.id}
+                                        {...(tweak as Tweak)}
+                                    />
+                                )
                             })}
                         </AccordionContent>
                     </AccordionItem>
