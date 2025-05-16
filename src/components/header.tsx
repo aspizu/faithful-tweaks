@@ -15,16 +15,23 @@ import {useWindowScroll} from "@uidotdev/usehooks"
 import {saveAs} from "file-saver"
 import {DownloadIcon, SettingsIcon, Share2Icon} from "lucide-react"
 
+const splashes = ["Zoglin!?", "Unofficial", "Star Us", "Follow Us"]
+
 function HeaderStart() {
     return (
         <div className="flex items-center gap-2 justify-self-start">
             <SidebarTrigger />
-            <img
-                srcSet={`${BASE_URL}/minecraft_title.png`}
-                className="overlapping-grid-layer h-8 justify-self-center"
-                alt="Faithful Tweaks (Unofficial) logo"
-                title="Faithful Tweaks (Unofficial)"
-            />
+            <div className="relative h-8 justify-self-center">
+                <img
+                    srcSet={`${BASE_URL}/minecraft_title.png`}
+                    className="h-full"
+                    alt="Faithful Tweaks (Unofficial) logo"
+                    title="Faithful Tweaks (Unofficial)"
+                />
+                <span className="absolute -right-2 -bottom-2 -rotate-20 animate-[splash_1s_ease-in-out_infinite] text-[10px] font-semibold text-amber-300">
+                    {splashes[Math.floor(Math.random() * splashes.length)]}
+                </span>
+            </div>
         </div>
     )
 }
