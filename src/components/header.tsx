@@ -29,7 +29,10 @@ function HeaderStart() {
                     alt="Faithful Tweaks (Unofficial) logo"
                     title="Faithful Tweaks (Unofficial)"
                 />
-                <span className="absolute -right-2 -bottom-2 -rotate-20 animate-[splash_1s_ease-in-out_infinite] text-[10px] font-semibold text-amber-300">
+                <span
+                    className="absolute -right-2 -bottom-2 -rotate-20 animate-[splash_1s_ease-in-out_infinite] text-[10px] font-semibold text-amber-300"
+                    aria-hidden="true"
+                >
                     {randomSplashText}
                 </span>
             </div>
