@@ -1,4 +1,3 @@
-import tweaks from "@/assets/tweaks.json"
 import {
     Sidebar,
     SidebarContent,
@@ -11,29 +10,24 @@ import {
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import {selectedTweaks, setTweakSelection} from "@/lib/state"
-import {customTweaks, isTweakCustom} from "@/lib/tweaks/custom-tweak"
+import {manifests} from "@/lib/tweaks/tweak"
 import {XIcon} from "lucide-react"
 
 function SelectedTweaksMenu() {
-    return selectedTweaks.value
-        .values()
-        .map((tweak) => (
-            <SidebarMenuItem key={tweak}>
-                <SidebarMenuButton>
-                    {isTweakCustom(tweak) ?
-                        customTweaks[tweak].manifest.title
-                    :   tweaks[tweak].title}
-                </SidebarMenuButton>
+    return manifests
+        .filter(({id}) => selectedTweaks.value.has(id))
+        .map(({id, title}) => (
+            <SidebarMenuItem key={id}>
+                <SidebarMenuButton title={title}>{title}</SidebarMenuButton>
                 <SidebarMenuAction
                     onClick={() => {
-                        setTweakSelection(tweak, false)
+                        setTweakSelection(id, false)
                     }}
                 >
                     <XIcon />
                 </SidebarMenuAction>
             </SidebarMenuItem>
         ))
-        .toArray()
 }
 
 export function AppSidebar() {
