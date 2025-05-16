@@ -19,6 +19,7 @@ export class Packager {
     async package() {
         await this.addAllSelectedTweaks()
         await this.addLicenses()
+        this.addMeta()
     }
 
     getMeta() {
