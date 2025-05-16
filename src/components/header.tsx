@@ -15,7 +15,8 @@ import {useWindowScroll} from "@uidotdev/usehooks"
 import {saveAs} from "file-saver"
 import {DownloadIcon, SettingsIcon, Share2Icon} from "lucide-react"
 
-const splashes = ["Zoglin!?", "Unofficial", "Star Us", "Follow Us"]
+const splashTexts = ["Zoglin!?", "Unofficial", "Star Us", "Follow Us"]
+const randomSplashText = splashTexts[Math.floor(Math.random() * splashTexts.length)]
 
 function HeaderStart() {
     return (
@@ -29,7 +30,7 @@ function HeaderStart() {
                     title="Faithful Tweaks (Unofficial)"
                 />
                 <span className="absolute -right-2 -bottom-2 -rotate-20 animate-[splash_1s_ease-in-out_infinite] text-[10px] font-semibold text-amber-300">
-                    {splashes[Math.floor(Math.random() * splashes.length)]}
+                    {randomSplashText}
                 </span>
             </div>
         </div>
