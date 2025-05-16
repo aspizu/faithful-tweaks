@@ -35,7 +35,7 @@
  - [ ] Smoother Warped Planks
  - [ ] Consistent Bamboo Planks
  - [ ] Alternate Cut Copper
- - [ ] Polished Stones to Bricks
+ - [X] Polished Stones to Bricks
  - [ ] Singular Glazed Terracotta
  - [X] Horizontal World Border
  - [ ] Plain Leather Armor
