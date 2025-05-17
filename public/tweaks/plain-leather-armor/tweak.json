@@ -1,0 +1,8 @@
+{
+    "index": 26,
+    "id": "plain-leather-armor",
+    "title": "Plain Leather Armor",
+    "description": "Removes the brown overlay from Leather Armor.",
+    "author": {"name": "aspizu", "github": "https://github.com/aspizu"},
+    "category": "aesthetic"
+}
