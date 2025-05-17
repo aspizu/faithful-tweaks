@@ -38,7 +38,7 @@
  - [X] Polished Stones to Bricks
  - [ ] Singular Glazed Terracotta
  - [X] Horizontal World Border
- - [ ] Plain Leather Armor
+ - [X] Plain Leather Armor
  - [ ] Golden Crown
  - [ ] Classic Style Netherite Armor
  - [ ] Allay Elytra
